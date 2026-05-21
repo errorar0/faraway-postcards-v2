@@ -4,238 +4,385 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>The Volcanic Architecture of Armenia — Faraway Postcards</title>
-<meta name="description" content="In Armenia, architecture is not built onto the landscape — it is extracted from it. A quiet study of volcanic stone, monasteries, cities, and basalt canyons." />
+<meta name="description" content="In Armenia, architecture does not feel separated from the landscape. It feels extracted from it. A quiet study of volcanic stone, monasteries, and basalt canyons." />
 <link rel="stylesheet" href="../styles.css" />
-
 <style>
-.article {
-  background: #fff;
-  color: #1a1a1a;
-  --serif: Georgia, "Times New Roman", serif;
+/* ============================================================
+The Volcanic Architecture of Armenia
+Premium editorial article layout — scoped to this page.
+============================================================ */
+
+:root {
+--ink: #15140f;
+--ink-soft: #2a2824;
+--paper: #fbf9f4;
+--rule: rgba(21, 20, 15, 0.14);
+--muted: rgba(21, 20, 15, 0.6);
+--serif: "Cormorant Garamond", "EB Garamond", Georgia, "Times New Roman", serif;
+--sans: "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
 }
 
-.article-hero {
-  position: relative;
-  width: 100%;
-  height: clamp(460px, 88vh, 820px);
-  overflow: hidden;
-  margin: 0;
+.va-article {
+background: var(--paper);
+color: var(--ink);
+font-family: var(--sans);
+-webkit-font-smoothing: antialiased;
+text-rendering: optimizeLegibility;
 }
 
-.article-hero__img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+/* ---------- HERO ---------- */
+.va-hero {
+position: relative;
+width: 100%;
+height: clamp(520px, 92vh, 880px);
+overflow: hidden;
+margin: 0;
+}
+.va-hero__img {
+position: absolute;
+inset: 0;
+width: 100%;
+height: 100%;
+object-fit: cover;
+display: block;
+}
+.va-hero__veil {
+position: absolute;
+inset: 0;
+background:
+linear-gradient(
+180deg,
+rgba(0,0,0,0.25) 0%,
+rgba(0,0,0,0.05) 38%,
+rgba(0,0,0,0.10) 62%,
+rgba(0,0,0,0.70) 100%
+);
+}
+.va-hero__caption {
+position: absolute;
+inset: 0;
+display: flex;
+flex-direction: column;
+justify-content: flex-end;
+align-items: center;
+text-align: center;
+color: #fff;
+padding: 0 1.5rem 5rem;
+}
+.va-hero__kicker {
+font-family: var(--sans);
+font-size: 0.72rem;
+letter-spacing: 0.36em;
+text-transform: uppercase;
+opacity: 0.85;
+margin: 0 0 1.75rem;
+}
+.va-hero__title {
+font-family: var(--serif);
+font-weight: 500;
+font-size: clamp(2.4rem, 5.6vw, 4.2rem);
+line-height: 1.05;
+letter-spacing: -0.015em;
+margin: 0 auto;
+max-width: 18ch;
+}
+.va-hero__byline {
+margin-top: 2rem;
+font-size: 0.78rem;
+letter-spacing: 0.22em;
+text-transform: uppercase;
+opacity: 0.75;
 }
 
-.article-hero__veil {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,0.08) 0%, rgba(0,0,0,0.1) 38%, rgba(0,0,0,0.62) 100%);
+/* ---------- INTRO BLOCK ---------- */
+.va-intro {
+max-width: 660px;
+margin: 0 auto;
+padding: 6rem 1.5rem 1.5rem;
+text-align: center;
+}
+.va-intro__rule {
+width: 42px;
+height: 1px;
+background: var(--ink);
+opacity: 0.45;
+margin: 0 auto 2.5rem;
+}
+.va-intro__lede {
+font-family: var(--serif);
+font-style: italic;
+font-weight: 400;
+font-size: clamp(1.3rem, 2.1vw, 1.6rem);
+line-height: 1.5;
+color: var(--ink-soft);
+margin: 0;
 }
 
-.article-hero__caption {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  padding: 0 1.5rem 4rem;
-  color: #fff;
-  text-align: center;
+/* ---------- BODY ---------- */
+.va-body {
+max-width: 660px;
+margin: 0 auto;
+padding: 3rem 1.5rem 0;
+}
+.va-body p {
+font-family: var(--serif);
+font-size: 1.22rem;
+line-height: 1.75;
+margin: 0 0 1.5rem;
+color: var(--ink);
+font-weight: 400;
+}
+.va-body p:first-of-type::first-letter {
+font-family: var(--serif);
+font-size: 4.5rem;
+line-height: 0.9;
+float: left;
+padding: 0.35rem 0.75rem 0 0;
+font-weight: 500;
+color: var(--ink);
 }
 
-.article-hero__eyebrow {
-  letter-spacing: 0.32em;
-  text-transform: uppercase;
-  font-size: 0.72rem;
-  opacity: 0.85;
-  margin: 0 0 1.5rem;
+/* H2 sections */
+.va-section-title {
+font-family: var(--serif);
+font-weight: 500;
+font-size: clamp(1.75rem, 2.6vw, 2.15rem);
+line-height: 1.2;
+letter-spacing: -0.01em;
+margin: 5rem 0 2rem;
+padding-top: 2.5rem;
+position: relative;
+color: var(--ink);
+}
+.va-section-title::before {
+content: "";
+position: absolute;
+top: 0;
+left: 0;
+width: 32px;
+height: 1px;
+background: var(--ink);
+opacity: 0.5;
+}
+.va-section-title__num {
+display: block;
+font-family: var(--sans);
+font-size: 0.7rem;
+letter-spacing: 0.32em;
+text-transform: uppercase;
+color: var(--muted);
+margin-bottom: 0.9rem;
+font-weight: 500;
 }
 
-.article-hero__title {
-  font-family: var(--serif);
-  font-weight: 400;
-  font-size: clamp(2.2rem, 5vw, 3.6rem);
-  line-height: 1.1;
-  max-width: 18ch;
-  margin: 0 auto;
+/* ---------- FULL-BLEED FIGURES ---------- */
+.va-figure {
+margin: 5.5rem calc(50% - 50vw);
+width: 100vw;
+max-width: 100vw;
+}
+.va-figure__frame {
+max-width: 1180px;
+margin: 0 auto;
+padding: 0 1.5rem;
+}
+.va-figure img {
+width: 100%;
+height: auto;
+max-height: 82vh;
+object-fit: cover;
+display: block;
+border-radius: 2px;
+}
+.va-figure figcaption {
+max-width: 660px;
+margin: 1.25rem auto 0;
+font-family: var(--sans);
+font-size: 0.82rem;
+line-height: 1.55;
+color: var(--muted);
+text-align: center;
+letter-spacing: 0.02em;
+font-style: italic;
+padding: 0 1rem;
 }
 
-.article-lede {
-  max-width: 640px;
-  margin: 0 auto;
-  padding: 4.5rem 1.5rem 1rem;
-  text-align: center;
+/* ---------- PULL QUOTE ---------- */
+.va-pull {
+max-width: 780px;
+margin: 5rem auto;
+padding: 0 1.5rem;
+text-align: center;
+}
+.va-pull__mark {
+font-family: var(--serif);
+font-size: 3rem;
+line-height: 1;
+color: var(--ink);
+opacity: 0.35;
+margin: 0 0 0.75rem;
+}
+.va-pull__text {
+font-family: var(--serif);
+font-weight: 400;
+font-size: clamp(1.5rem, 2.6vw, 2rem);
+line-height: 1.35;
+letter-spacing: -0.005em;
+color: var(--ink);
+margin: 0;
+}
+.va-pull__rule {
+width: 42px;
+height: 1px;
+background: var(--ink);
+opacity: 0.4;
+margin: 2rem auto 0;
 }
 
-.article-lede__rule {
-  width: 36px;
-  height: 1px;
-  background: #1a1a1a;
-  margin: 0 auto 2rem;
-  opacity: 0.45;
+/* ---------- END MARK + FOOT ---------- */
+.va-end {
+text-align: center;
+margin: 3.5rem 0 0;
+font-family: var(--serif);
+font-size: 1.5rem;
+color: var(--ink);
+opacity: 0.5;
+letter-spacing: 0.4em;
+}
+.va-foot {
+max-width: 660px;
+margin: 4rem auto 0;
+padding: 2.5rem 1.5rem 6rem;
+border-top: 1px solid var(--rule);
+text-align: center;
+}
+.va-foot p {
+margin: 0;
+font-family: var(--sans);
+font-size: 0.78rem;
+letter-spacing: 0.24em;
+text-transform: uppercase;
+color: var(--muted);
 }
 
-.article-lede__text {
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: clamp(1.15rem, 1.8vw, 1.35rem);
-  line-height: 1.55;
-  opacity: 0.82;
-  margin: 0;
+/* ---------- MOBILE ---------- */
+@media (max-width: 760px) {
+.va-hero {
+height: clamp(420px, 78vh, 640px);
 }
-
-.article-body {
-  max-width: 640px;
-  margin: 0 auto;
-  padding: 3.5rem 1.5rem 5.5rem;
+.va-hero__caption {
+padding-bottom: 3rem;
 }
-
-.article-body p {
-  font-size: 1.08rem;
-  line-height: 1.85;
-  margin: 0 0 1.5rem;
+.va-hero__kicker {
+letter-spacing: 0.28em;
+font-size: 0.68rem;
+margin-bottom: 1.1rem;
 }
-
-.article-body h2 {
-  font-family: var(--serif);
-  font-weight: 400;
-  font-size: 1.65rem;
-  line-height: 1.3;
-  margin: 4.5rem 0 1.75rem;
-  position: relative;
-  padding-top: 2.25rem;
+.va-hero__byline {
+margin-top: 1.25rem;
+font-size: 0.7rem;
 }
-
-.article-body h2::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 28px;
-  height: 1px;
-  background: #1a1a1a;
-  opacity: 0.5;
+.va-intro {
+padding: 3.5rem 1.25rem 1rem;
 }
-
-.article-figure {
-  margin: 4.5rem calc(50% - 50vw);
-  width: 100vw;
+.va-intro__rule {
+margin-bottom: 1.75rem;
 }
-
-.article-figure__frame {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
+.va-body {
+padding: 2rem 1.25rem 0;
 }
-
-.article-figure img {
-  width: 100%;
-  max-height: 78vh;
-  object-fit: cover;
-  display: block;
-  border-radius: 2px;
+.va-body p {
+font-size: 1.08rem;
+line-height: 1.72;
 }
-
-.article-foot {
-  max-width: 640px;
-  margin: 4rem auto 0;
-  padding: 2rem 1.5rem 0;
-  border-top: 1px solid rgba(0,0,0,0.1);
-  text-align: center;
+.va-body p:first-of-type::first-letter {
+font-size: 3.5rem;
+padding: 0.3rem 0.55rem 0 0;
 }
-
-.article-foot p {
-  font-size: 0.85rem;
-  opacity: 0.55;
-  margin: 0;
-  letter-spacing: 0.05em;
+.va-section-title {
+margin: 3.5rem 0 1.5rem;
+padding-top: 1.75rem;
 }
-
-@media (max-width: 720px) {
-  .article-hero {
-    height: clamp(380px, 70vh, 600px);
-  }
-
-  .article-hero__caption {
-    padding-bottom: 2.5rem;
-  }
-
-  .article-lede {
-    padding: 3rem 1.25rem 0.5rem;
-  }
-
-  .article-body {
-    padding: 2.5rem 1.25rem 3.5rem;
-  }
-
-  .article-body p {
-    font-size: 1.02rem;
-    line-height: 1.78;
-  }
-
-  .article-body h2 {
-    font-size: 1.4rem;
-    margin: 3.25rem 0 1.25rem;
-    padding-top: 1.75rem;
-  }
-
-  .article-figure {
-    margin: 3rem calc(50% - 50vw);
-  }
-
-  .article-figure__frame {
-    padding: 0 1.25rem;
-  }
+.va-figure {
+margin: 3.5rem calc(50% - 50vw);
+}
+.va-figure__frame {
+padding: 0 1.25rem;
+}
+.va-pull {
+margin: 3.5rem auto;
+}
+.va-foot {
+padding: 2rem 1.25rem 4rem;
+}
 }
 </style>
 </head>
-
 <body>
 
 <header class="nav">
-  <div class="nav__inner">
-    <a href="../index.html" class="nav__logo">Faraway Postcards</a>
-    <nav class="nav__links">
-      <a href="../index.html">Home</a>
-      <a href="../about.html">About</a>
-    </nav>
-  </div>
+<div class="nav__inner">
+<a href="../index.html" class="nav__logo">Faraway Postcards</a>
+<nav class="nav__links">
+<a href="../index.html">Home</a>
+<a href="../about.html">About</a>
+</nav>
+</div>
 </header>
 
 <main>
-<article class="article">
+<article class="va-article">
 
-<figure class="article-hero">
-  <img class="article-hero__img" src="../images/yerevan_armenia.jpeg" alt="Yerevan and Mount Ararat at sunset" />
-  <div class="article-hero__veil"></div>
-  <figcaption class="article-hero__caption">
-    <p class="article-hero__eyebrow">Armenia · Architecture</p>
-    <h1 class="article-hero__title">The Volcanic Architecture of Armenia</h1>
-  </figcaption>
+<!-- =================== HERO =================== -->
+<figure class="va-hero">
+<img class="va-hero__img" src="../images/yerevan_armenia.jpeg" alt="Yerevan glowing at dusk beneath the volcanic highlands of Armenia" />
+<div class="va-hero__veil"></div>
+<figcaption class="va-hero__caption">
+<p class="va-hero__kicker">Armenia · Architecture</p>
+<h1 class="va-hero__title">The Volcanic Architecture of Armenia</h1>
+<p class="va-hero__byline">Faraway Postcards · A Field Essay</p>
+</figcaption>
 </figure>
 
-<section class="article-lede">
-  <div class="article-lede__rule"></div>
-  <p class="article-lede__text">In Armenia, architecture does not feel separated from the landscape. It feels extracted from it.</p>
+<!-- =================== INTRO =================== -->
+<section class="va-intro">
+<div class="va-intro__rule"></div>
+<p class="va-intro__lede">
+In Armenia, architecture does not feel separated from the landscape.
+It feels extracted from it.
+</p>
 </section>
 
-<section class="article-body">
+<!-- =================== BODY — OPENING =================== -->
+<section class="va-body">
 
 <p>Churches rise from black cliffs using the same volcanic stone as the mountains behind them. Entire cities appear carved from ash-colored rock. Monasteries seem less constructed than fused into canyons, caves, and plateaus shaped by tectonic violence millions of years before Christianity arrived.</p>
 
 <p>This is what makes Armenia architecturally unusual.</p>
 
-<p>Not simply age.<br />Not religion.<br />Material.</p>
+<p>Not simply age.<br />
+Not religion.<br />
+Material.</p>
 
 <p>The country sits on a volcanic highland where basalt, tuff, and dark lava stone have shaped architecture for centuries. In many places, the buildings do not contrast with the terrain the way European architecture often does.</p>
 
 <p>They dissolve into it.</p>
 
-<h2>Yerevan: The City Built From Volcanic Light</h2>
+</section>
+
+<!-- =================== PULL QUOTE =================== -->
+<aside class="va-pull">
+<p class="va-pull__mark">“</p>
+<p class="va-pull__text">Buildings age physically instead of remaining visually frozen.</p>
+<div class="va-pull__rule"></div>
+</aside>
+
+<!-- =================== SECTION 1 — YEREVAN =================== -->
+<section class="va-body">
+<h2 class="va-section-title">
+<span class="va-section-title__num">I · The Capital</span>
+Yerevan: The City Built From Volcanic Light
+</h2>
 
 <p>At first glance, Yerevan does not look volcanic.</p>
 
@@ -248,22 +395,27 @@
 <p>Unlike concrete or polished marble, volcanic tuff carries softness and erosion visibly on its surface. Corners wear down. Texture deepens. Buildings age physically instead of remaining visually frozen.</p>
 
 <p>Even modern Armenia often looks ancient because the stone itself already feels geological.</p>
-
 </section>
 
-<figure class="article-figure">
-  <div class="article-figure__frame">
-    <img src="../images/yerevan_armenia_city.jpeg" alt="Yerevan city built from pink volcanic tuff" />
-  </div>
+<!-- =================== FIGURE =================== -->
+<figure class="va-figure">
+<div class="va-figure__frame">
+<img src="../images/yerevan_armenia_city.jpeg" alt="Central Yerevan built from pink volcanic tuff stone in afternoon light" />
+<figcaption>Yerevan — a capital that absorbs the warmth of its own stone.</figcaption>
+</div>
 </figure>
 
-<section class="article-body">
+<!-- =================== SECTION 2 — GEGHARD =================== -->
+<section class="va-body">
+<h2 class="va-section-title">
+<span class="va-section-title__num">II · The Mountain Church</span>
+Geghard: Architecture Carved Into the Mountain
+</h2>
 
-<h2>Geghard: Architecture Carved Into the Mountain</h2>
+<p>Nowhere explains Armenia's volcanic architecture more clearly than Geghard Monastery.</p>
 
-<p>Nowhere explains Armenia’s volcanic architecture more clearly than Geghard Monastery.</p>
-
-<p>Parts of the monastery are not constructed beside the mountain.<br />They are carved directly inside it.</p>
+<p>Parts of the monastery are not constructed beside the mountain.<br />
+They are carved directly inside it.</p>
 
 <p>The deeper chambers disappear into black volcanic rock where candlelight barely reaches the walls. Water drips slowly through the stone ceiling into medieval basins polished by centuries of hands. The air smells damp and mineral-heavy.</p>
 
@@ -271,21 +423,27 @@
 
 <p>This is one of the reasons architects find Armenia so fascinating.</p>
 
-<p>Much of European religious architecture imposes itself onto the landscape.<br />Geghard feels excavated from it.</p>
+<p>Much of European religious architecture imposes itself onto the landscape.<br />
+Geghard feels excavated from it.</p>
 
-<p>The monastery does not dominate the canyon.<br />It belongs to it.</p>
-
+<p>The monastery does not dominate the canyon.<br />
+It belongs to it.</p>
 </section>
 
-<figure class="article-figure">
-  <div class="article-figure__frame">
-    <img src="../images/gegard_armenia.jpeg" alt="Geghard Monastery carved into volcanic rock" />
-  </div>
+<!-- =================== FIGURE =================== -->
+<figure class="va-figure">
+<div class="va-figure__frame">
+<img src="../images/gegard_armenia.jpeg" alt="Geghard Monastery carved directly into the volcanic cliffs of the Azat River canyon" />
+<figcaption>Geghard — where the chapel is no longer separate from the cliff.</figcaption>
+</div>
 </figure>
 
-<section class="article-body">
-
-<h2>Garni and the Basalt Geometry of the Canyon</h2>
+<!-- =================== SECTION 3 — GARNI =================== -->
+<section class="va-body">
+<h2 class="va-section-title">
+<span class="va-section-title__num">III · The Canyon</span>
+Garni and the Basalt Geometry of the Canyon
+</h2>
 
 <p>Near Garni Temple, the landscape itself begins resembling architecture.</p>
 
@@ -294,125 +452,35 @@
 <p>From a distance, the cliffs resemble giant organ pipes or unfinished brutalist architecture.</p>
 
 <p>The effect is strangely modern despite being entirely geological.</p>
-
-<p>And this relationship between volcanic geometry and Armenian construction appears repeatedly throughout the country.</p>
-
-<p>Sharp lines. Heavy stone. Dark surfaces. Minimal ornamentation.</p>
-
-<p>Even medieval monasteries often feel unexpectedly contemporary because their forms mirror the brutal simplicity of the volcanic landscape itself.</p>
-
 </section>
 
-<figure class="article-figure">
-  <div class="article-figure__frame">
-    <img src="../images/tatev_monastery.jpeg" alt="Tatev Monastery standing above the Vorotan Canyon" />
-  </div>
+<!-- =================== FIGURE =================== -->
+<figure class="va-figure">
+<div class="va-figure__frame">
+<img src="../images/tatev_monastery.jpeg" alt="Tatev Monastery standing on a basalt plateau above the Vorotan Gorge" />
+<figcaption>The architecture of Armenia rarely sits on the land — it grows out of it.</figcaption>
+</div>
 </figure>
 
-<section class="article-body">
+<!-- =================== END =================== -->
+<div class="va-end">· · ·</div>
 
-<h2>Noravank and the Red Stone of Vayots Dzor</h2>
-
-<p>The road toward Noravank cuts through towering canyon walls saturated with volcanic iron and mineral color.</p>
-
-<p>By sunset, the cliffs become almost unnaturally red.</p>
-
-<p>The monastery sits at the end of the gorge beneath enormous rock faces that make the structure appear physically vulnerable against the scale of the landscape.</p>
-
-<p>Unlike Gothic cathedrals in Europe designed to separate humanity from nature, Armenian monasteries often seem intentionally exposed to it.</p>
-
-<p>Noravank does not rise above the canyon.<br />It survives inside it.</p>
-
-<p>The volcanic stone used in the monastery shifts constantly with weather and light — orange, rust, black, dark rose. After rain, the surfaces deepen almost to blood-red.</p>
-
-<p>The architecture feels alive because the geology around it remains visually active.</p>
-
-<h2>Gyumri and the Black Stone Cities</h2>
-
-<p>In Gyumri, volcanic architecture becomes urban.</p>
-
-<p>Large parts of the city are built from dark basalt and black tuff extracted from nearby volcanic terrain. Streets feel visually heavier than most European cities because the stone absorbs light rather than reflecting it.</p>
-
-<p>Old nineteenth-century buildings appear almost monochrome during cloudy weather. Ornamental details emerge slowly from shadow. Cracks from the devastating 1988 earthquake still remain visible across some facades.</p>
-
-<p>Even silence behaves differently in Gyumri.</p>
-
-<p>The dark stone softens sound.</p>
-
-<p>The city feels colder. Slower. More permanent.</p>
-
-<p>Architecturally, it creates an atmosphere closer to volcanic regions of Iceland or eastern Anatolia than to the polished historic centers of Europe.</p>
-
-<h2>Tatev and Architecture on the Edge of Collapse</h2>
-
-<p>Reaching Tatev Monastery means crossing one of the deepest gorges in the Caucasus.</p>
-
-<p>The monastery stands above the Vorotan Canyon surrounded by volcanic mountains that often disappear behind fog and low cloud.</p>
-
-<p>Here, Armenian architecture begins feeling almost defensive against geography itself.</p>
-
-<p>Thick stone walls. Minimal openings. Low silhouettes resisting wind and isolation.</p>
-
-<p>Nothing about Tatev feels decorative.</p>
-
-<p>Everything feels built for endurance.</p>
-
-<p>The monastery looks as though it has spent centuries resisting weather rather than attracting admiration.</p>
-
-<p>And perhaps that is another reason architects study Armenia so closely.</p>
-
-<p>The architecture here rarely prioritizes spectacle.</p>
-
-<p>It prioritizes survival.</p>
-
-<h2>Sevanavank and the Volcanic North</h2>
-
-<p>At Sevanavank above Lake Sevan, black volcanic churches stand against cold water and pale mountain light.</p>
-
-<p>In autumn, the landscape becomes almost monochromatic:</p>
-
-<p>Dark stone.<br />Gray sky.<br />Silver water.<br />Bare volcanic hills.</p>
-
-<p>The churches feel less constructed than anchored into the terrain itself.</p>
-
-<p>Unlike Mediterranean architecture designed around openness and ornament, Armenian religious architecture often feels compact, weather-resistant, and inseparable from climate.</p>
-
-<p>The buildings appear shaped by altitude, storms, and isolation as much as by theology.</p>
-
-<h2>Why Architects Keep Returning to Armenia</h2>
-
-<p>Armenia interests architects because it challenges many traditional ideas about architecture itself.</p>
-
-<p>The country’s most powerful structures are rarely grand in the European sense.</p>
-
-<p>They are heavy.<br />Minimal.<br />Volcanic.<br />Weathered.</p>
-
-<p>Instead of separating human construction from nature, Armenian architecture often merges with geology so completely that the distinction almost disappears.</p>
-
-<p>Monasteries emerge from cliffs. Cities absorb the color of volcanic plains. Churches resemble extensions of mountain ridges and canyon walls.</p>
-
-<p>In Armenia, architecture does not simply sit on the landscape.</p>
-
-<p>It feels born from it.</p>
-
-</section>
-
-<footer class="article-foot">
-  <p>Faraway Postcards</p>
+<footer class="va-foot">
+<p>Faraway Postcards — An Independent Travel Journal</p>
 </footer>
 
 </article>
 </main>
 
 <footer class="footer">
-  <div class="footer__inner">
-    <p class="footer__logo">Faraway Postcards</p>
-    <nav class="footer__links">
-      <a href="../index.html">Home</a>
-      <a href="../about.html">About</a>
-    </nav>
-    <p class="footer__base">© <span id="year"></span> Faraway Postcards</p>
-  </div>
+<div class="footer__inner">
+<p class="footer__logo">Faraway Postcards</p>
+<nav class="footer__links">
+<a href="../index.html">Home</a>
+<a href="../about.html">About</a>
+</nav>
+<p class="footer__base">© <span id="year"></span> Faraway Postcards</p>
+</div>
 </footer>
 
 <script src="../script.js"></script>
