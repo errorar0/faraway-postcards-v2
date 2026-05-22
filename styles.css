@@ -427,3 +427,10 @@ a:focus-visible {
     margin-left: auto;
     margin-right: auto;
 }
+
+.nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #faf7f2;
+}
