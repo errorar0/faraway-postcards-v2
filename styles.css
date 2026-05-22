@@ -434,10 +434,3 @@ a:focus-visible {
     z-index: 1000;
     background: #faf7f2;
 }
-
-.nav {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: #faf7f2;
-}
