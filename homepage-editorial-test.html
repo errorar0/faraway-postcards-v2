@@ -43,7 +43,7 @@
   }
 
   /* ============================================
-     STICKY HEADER
+     STICKY HEADER  (unchanged)
      ============================================ */
   .site-header {
     position: sticky;
@@ -88,19 +88,22 @@
   }
 
   /* ============================================
-     HERO SECTION
+     HERO SECTION  (edge-to-edge, no padding)
      ============================================ */
   .hero {
-    padding: 56px 20px 0;
-    max-width: 920px;
-    margin: 0 auto;
+    /* No padding, no max-width — hero spans full viewport width
+       and sits flush against the sticky header. */
+    width: 100%;
+    margin: 0;
+    padding: 0;
   }
 
   .hero-image-wrap {
     width: 100%;
+    margin: 0;
     overflow: hidden;
-    border-radius: 2px;
     background: #2a2520;
+    border-radius: 0;             /* no rounded corners */
     aspect-ratio: 4 / 5;
   }
 
@@ -111,30 +114,33 @@
     filter: brightness(0.94) contrast(1.02);
   }
 
+  /* Hero text returns to comfortable editorial padding */
   .hero-text {
-    padding: 44px 4px 0;
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 56px 24px 0;
   }
 
   .hero-headline {
     font-family: Georgia, 'Times New Roman', serif;
     font-weight: 400;
-    font-style: italic;
-    font-size: clamp(1.85rem, 6.5vw, 2.9rem);
-    line-height: 1.18;
+    font-style: normal;           /* no italic */
+    font-size: clamp(1.7rem, 5.5vw, 2.5rem);
+    line-height: 1.25;
     letter-spacing: 0.005em;
     color: #1f1a16;
     margin-bottom: 28px;
-    max-width: 16ch;
+    max-width: 22ch;
   }
 
   .hero-description {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    font-size: 0.92rem;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 0.95rem;
     line-height: 1.85;
     color: #5a4f44;
-    max-width: 38ch;
+    max-width: 40ch;
     font-weight: 400;
-    letter-spacing: 0.01em;
+    letter-spacing: 0.005em;
   }
 
   /* ============================================
@@ -150,19 +156,19 @@
   }
 
   .filter-label {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    font-size: 0.7rem;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-weight: 400;
+    font-size: 0.78rem;
     letter-spacing: 0.32em;
     text-transform: uppercase;
-    color: #8a7f72;
+    color: #6b6055;
     padding: 0 24px;
-    margin-bottom: 18px;
-    font-weight: 500;
+    margin-bottom: 20px;
   }
 
   .filter-row {
     display: flex;
-    gap: 10px;
+    gap: 14px;
     overflow-x: auto;
     overflow-y: hidden;
     padding: 4px 24px 14px;
@@ -177,15 +183,15 @@
 
   .filter-chip {
     flex: 0 0 auto;
-    padding: 10px 18px;
+    padding: 9px 20px;
     background: transparent;
-    border: 1px solid #c9bfae;
-    border-radius: 999px;
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    font-size: 0.72rem;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: #4a3f36;
+    border: 1px solid #cbbfae;    /* softer warm border */
+    border-radius: 2px;            /* subtle, printed feel */
+    font-family: Georgia, 'Times New Roman', serif;
+    font-weight: 400;
+    font-size: 0.88rem;
+    letter-spacing: 0.04em;
+    color: #3a3128;
     cursor: pointer;
     transition: background 0.4s ease, color 0.4s ease, border-color 0.4s ease;
     scroll-snap-align: start;
@@ -268,12 +274,12 @@
   }
 
   .article-meta span {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    font-size: 0.65rem;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 0.72rem;
     letter-spacing: 0.3em;
     text-transform: uppercase;
     color: #8a7f72;
-    font-weight: 500;
+    font-weight: 400;
   }
 
   .article-title {
@@ -295,8 +301,8 @@
     color: #8a7f72;
     text-align: center;
     padding: 50px 20px;
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    font-size: 0.7rem;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 0.78rem;
     letter-spacing: 0.28em;
     text-transform: uppercase;
   }
@@ -313,16 +319,12 @@
       font-size: 1.15rem;
     }
 
-    .hero {
-      padding: 80px 36px 0;
-    }
-
     .hero-image-wrap {
-      aspect-ratio: 16 / 10;
+      aspect-ratio: 16 / 9;
     }
 
     .hero-text {
-      padding: 56px 4px 0;
+      padding: 72px 36px 0;
       display: flex;
       gap: 60px;
       align-items: flex-start;
@@ -331,7 +333,7 @@
     .hero-headline {
       flex: 1;
       margin-bottom: 0;
-      font-size: clamp(2.4rem, 4vw, 3.2rem);
+      font-size: clamp(2rem, 3.4vw, 2.7rem);
     }
 
     .hero-description {
@@ -365,13 +367,16 @@
   }
 
   @media (min-width: 1100px) {
-    .hero,
     .article-feed {
       max-width: 1040px;
     }
 
+    .hero-text {
+      max-width: 1040px;
+    }
+
     .hero-headline {
-      font-size: 3.4rem;
+      font-size: 2.9rem;
     }
   }
 
@@ -408,7 +413,7 @@
   </header>
 
   <!-- ============================================
-       HERO SECTION
+       HERO SECTION  (edge-to-edge image)
        ============================================ -->
   <section class="hero">
     <div class="hero-image-wrap">
@@ -610,7 +615,6 @@
           observer.observe(article);
         });
       } else {
-        // Fallback for very old browsers
         articles.forEach(function (article) {
           article.classList.add('visible');
         });
