@@ -1,6 +1,3 @@
-homepage-editorial-test.html — Updated
-Only the typography of the hero headline, the filter labels (COUNTRY / EXPERIENCE), and the filter chips has been changed. The logo, body paragraph, layout, colors, spacing, hero image placement, and sticky header are all preserved exactly as before.
-Libre Baskerville is loaded from Google Fonts as a web-safe fallback in case the user's system doesn't have native Baskerville — the font stack tries native Baskerville first.
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,15 +5,11 @@ Libre Baskerville is loaded from Google Fonts as a web-safe fallback in case the
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Faraway Postcards — Editorial Homepage Prototype</title>
 
-<!-- Libre Baskerville as a reliable fallback for the new typography -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
-/* ============================================
-RESET & BASE
-============================================ */
 *,
 *::before,
 *::after {
@@ -33,8 +26,8 @@ scroll-behavior: smooth;
 
 body {
 font-family: Georgia, 'Times New Roman', serif;
-background: #f5f1ea;          /* muted beige / ivory */
-color: #2a2520;                /* warm black-brown */
+background: #f5f1ea;
+color: #2a2520;
 line-height: 1.6;
 overflow-x: hidden;
 }
@@ -50,16 +43,13 @@ color: inherit;
 text-decoration: none;
 }
 
-/* ============================================
-STICKY HEADER  (unchanged)
-============================================ */
 .site-header {
 position: sticky;
 top: 0;
 left: 0;
 width: 100%;
-background: #1a1613;           /* warm black */
-color: #ede6d6;                /* ivory */
+background: #1a1613;
+color: #ede6d6;
 z-index: 100;
 padding: 20px 24px;
 text-align: center;
@@ -95,9 +85,6 @@ outline: 1px dashed #ede6d6;
 outline-offset: 6px;
 }
 
-/* ============================================
-HERO SECTION
-============================================ */
 .hero {
 width: 100%;
 margin: 0;
@@ -126,10 +113,8 @@ margin: 0 auto;
 padding: 56px 24px 0;
 }
 
-/* === UPDATED: hero headline now uses Baskerville === */
 .hero-headline {
-font-family: "Baskerville", "Libre Baskerville", "Baskerville Old Face",
-"Hoefler Text", Georgia, serif;
+font-family: "Baskerville", "Libre Baskerville", "Baskerville Old Face", "Hoefler Text", Georgia, serif;
 font-weight: 400;
 font-style: normal;
 font-size: clamp(1.7rem, 5.5vw, 2.5rem);
@@ -140,7 +125,6 @@ margin-bottom: 28px;
 max-width: 22ch;
 }
 
-/* Body paragraph — kept exactly as it was */
 .hero-description {
 font-family: Georgia, 'Times New Roman', serif;
 font-size: 0.95rem;
@@ -151,9 +135,6 @@ font-weight: 400;
 letter-spacing: 0.005em;
 }
 
-/* ============================================
-FILTER SECTIONS
-============================================ */
 .filters {
 margin-top: 80px;
 padding: 0;
@@ -163,13 +144,11 @@ padding: 0;
 margin-bottom: 36px;
 }
 
-/* === UPDATED: filter labels — Baskerville, wide tracked === */
 .filter-label {
-font-family: "Baskerville", "Libre Baskerville", "Baskerville Old Face",
-"Hoefler Text", Georgia, serif;
+font-family: "Baskerville", "Libre Baskerville", "Baskerville Old Face", "Hoefler Text", Georgia, serif;
 font-weight: 400;
 font-size: 0.72rem;
-letter-spacing: 0.42em;        /* very wide spacing — "GEORGIA & CHARLIE" feel */
+letter-spacing: 0.42em;
 text-transform: uppercase;
 color: #4a3f36;
 padding: 0 24px;
@@ -191,15 +170,13 @@ scrollbar-width: none;
 display: none;
 }
 
-/* === UPDATED: filter chips — Baskerville, soft printed feel === */
 .filter-chip {
 flex: 0 0 auto;
 padding: 10px 22px;
 background: transparent;
-border: 1px solid rgba(74, 63, 54, 0.28);   /* softer hairline border */
-border-radius: 1px;                          /* almost flat, printed */
-font-family: "Baskerville", "Libre Baskerville", "Baskerville Old Face",
-"Hoefler Text", Georgia, serif;
+border: 1px solid rgba(74, 63, 54, 0.28);
+border-radius: 1px;
+font-family: "Baskerville", "Libre Baskerville", "Baskerville Old Face", "Hoefler Text", Georgia, serif;
 font-weight: 400;
 font-size: 0.95rem;
 letter-spacing: 0.01em;
@@ -231,9 +208,6 @@ outline: 1px dashed #1a1613;
 outline-offset: 3px;
 }
 
-/* ============================================
-ARTICLE FEED
-============================================ */
 .article-feed {
 padding: 80px 20px 100px;
 max-width: 920px;
@@ -305,9 +279,6 @@ padding: 0 2px;
 max-width: 22ch;
 }
 
-/* ============================================
-FOOTER
-============================================ */
 .site-footer {
 background: #1a1613;
 color: #8a7f72;
@@ -319,9 +290,6 @@ letter-spacing: 0.28em;
 text-transform: uppercase;
 }
 
-/* ============================================
-TABLET & DESKTOP REFINEMENTS
-============================================ */
 @media (min-width: 768px) {
 .site-header {
 padding: 24px 36px;
@@ -392,9 +360,6 @@ font-size: 2.9rem;
 }
 }
 
-/* ============================================
-REDUCED MOTION
-============================================ */
 @media (prefers-reduced-motion: reduce) {
 html {
 scroll-behavior: auto;
@@ -415,22 +380,16 @@ transition: none;
 
 <body>
 
-<!-- ============================================
-STICKY HEADER
-============================================ -->
 <header class="site-header">
 <button class="site-logo" id="siteLogo" aria-label="Scroll to top">
 Faraway Postcards
 </button>
 </header>
 
-<!-- ============================================
-HERO SECTION
-============================================ -->
 <section class="hero">
 <div class="hero-image-wrap">
 <img
-src="images/my-pink-photo.jpg"
+src="images/my-pink-photo.jpeg"
 alt="Faraway Postcards — editorial travel photograph"
 loading="eager"
 />
@@ -449,9 +408,6 @@ atmosphere over itinerary.
 </div>
 </section>
 
-<!-- ============================================
-FILTERS
-============================================ -->
 <section class="filters" aria-label="Browse">
 
 <div class="filter-group">
@@ -481,9 +437,6 @@ FILTERS
 
 </section>
 
-<!-- ============================================
-ARTICLE FEED
-============================================ -->
 <main class="article-feed">
 
 <article class="article">
@@ -573,21 +526,14 @@ A long lunch in a fishing village south of Hoi An.
 
 </main>
 
-<!-- ============================================
-FOOTER
-============================================ -->
 <footer class="site-footer">
 Faraway Postcards — Editorial Prototype
 </footer>
 
-<!-- ============================================
-JAVASCRIPT
-============================================ -->
 <script>
 (function () {
 'use strict';
 
-/* ---------- Logo scroll-to-top ---------- */
 const logo = document.getElementById('siteLogo');
 if (logo) {
 logo.addEventListener('click', function () {
@@ -595,7 +541,6 @@ window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 }
 
-/* ---------- Filter chip toggling ---------- */
 const filterRows = document.querySelectorAll('.filter-row');
 filterRows.forEach(function (row) {
 const chips = row.querySelectorAll('.filter-chip');
@@ -607,7 +552,6 @@ chip.classList.add('active');
 });
 });
 
-/* ---------- Subtle fade-in on scroll ---------- */
 const articles = document.querySelectorAll('.article');
 
 if ('IntersectionObserver' in window) {
@@ -636,30 +580,3 @@ article.classList.add('visible');
 
 </body>
 </html>
-
-Summary of typography changes
-Hero headline — “Notes from places that ask you to slow down.”
-
-Font stack now leads with "Baskerville" (native on macOS / iOS) and falls back to "Libre Baskerville" (loaded from Google Fonts) and then to Georgia.
-Kept upright (no italic), font-weight: 400, calm sizing.
-Slightly increased line-height to 1.3 because Baskerville reads more elegantly with a touch more breathing room than Georgia.
-
-Filter labels — COUNTRY / EXPERIENCE
-
-Switched to the same Baskerville / Libre Baskerville font stack.
-Letter-spacing widened to 0.42em to match the airy, gallery-card feeling of references like "GEORGIA & CHARLIE".
-Slightly smaller font-size (0.72rem) and a calmer warm-brown color (#4a3f36) — refined editorial navigation rather than a UI label.
-
-Filter chips — country & experience pills
-
-Now use Baskerville at a comfortable 0.95rem reading size, normal letter-spacing, weight 400.
-Borders softened to a low-opacity warm hairline (rgba(74, 63, 54, 0.28)) and border-radius reduced to 1px for a flatter, more printed-publication feel — no longer reads as an app pill.
-Active and hover states still resolve to the same warm-black fill so the editorial mood holds even when interacting.
-
-Preserved exactly as before
-
-Logo Faraway Postcards (Georgia, wide-tracked, ivory on warm black) — completely untouched.
-Body paragraph beginning "Faraway Postcards is an independent travel journal…" — completely untouched.
-Layout, colors, hero image, spacing, sticky header, article feed, footer.
-
-A note on rendering: Apple devices ship a native Baskerville and will render the text in that elegant transitional serif immediately. On Windows and Android, where Baskerville isn't installed, the page falls through to Libre Baskerville loaded from Google Fonts — a faithful and well-respected open-source revival that holds the same character. This guarantees a consistent editorial typography across every device without depending on a single platform.
