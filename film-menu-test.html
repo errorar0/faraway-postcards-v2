@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Film Menu Test — Faraway Postcards</title>
+
+<style>
+  /* ---------- RESET ---------- */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html, body {
+    height: 100%;
+    font-family: Georgia, 'Times New Roman', serif;
+    background: #f5f1ea;
+    color: #2a2520;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  /* ---------- HEADER ---------- */
+  .site-header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 22px 24px;
+    background: #1a1613;
+    color: #ede6d6;
+    border-bottom: 1px solid #2a2520;
+    z-index: 10;
+  }
+
+  .site-title {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-weight: 400;
+    font-size: 1.25rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #ede6d6;
+  }
+
+  /* ---------- HAMBURGER ---------- */
+  .hamburger {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 38px;
+    height: 38px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .hamburger:focus {
+    outline: none;
+  }
+
+  .hamburger:focus-visible {
+    outline: 1px dashed #ede6d6;
+    outline-offset: 4px;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 22px;
+    height: 1.5px;
+    background: #ede6d6;
+    transition: background 0.3s ease;
+  }
+
+  .hamburger:hover span {
+    background: #fff;
+  }
+
+  /* ---------- PAGE CONTENT (demo only) ---------- */
+  .page-content {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 60px 24px;
+    text-align: center;
+  }
+
+  .page-content h1 {
+    font-weight: 400;
+    font-size: 1.4rem;
+    letter-spacing: 0.08em;
+    margin-bottom: 18px;
+    color: #2a2520;
+  }
+
+  .page-content p {
+    color: #5a4f44;
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  /* ---------- OVERLAY (backdrop) ---------- */
+  .menu-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(20, 16, 13, 0.55);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+    z-index: 50;
+  }
+
+  .menu-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* ---------- FILM STRIP MENU ---------- */
+  .film-strip {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) scaleY(0);
+    transform-origin: top center;
+    width: 280px;
+    background: #0e0b09;
+    z-index: 100;
+    transition: transform 0.55s cubic-bezier(0.22, 0.61, 0.36, 1);
+    box-shadow:
+      0 0 0 1px #0a0807,
+      0 20px 60px rgba(0, 0, 0, 0.5);
+    /* subtle film grain feel using layered dark tones */
+    background-image:
+      linear-gradient(
+        180deg,
+        #0e0b09 0%,
+        #110d0a 50%,
+        #0e0b09 100%
+      );
+  }
+
+  .film-strip.active {
+    transform: translateX(-50%) scaleY(1);
+  }
+
+  /* ---------- SPROCKET HOLES ---------- */
+  .sprocket-column {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 14px 0;
+    pointer-events: none;
+  }
+
+  .sprocket-column.left {
+    left: 0;
+  }
+
+  .sprocket-column.right {
+    right: 0;
+  }
+
+  .sprocket {
+    width: 14px;
+    height: 9px;
+    background: #f5f1ea;
+    margin: 0 auto;
+    border-radius: 1.5px;
+    box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.4);
+  }
+
+  /* ---------- MENU CONTENT ---------- */
+  .film-strip-inner {
+    padding: 36px 50px 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.4s ease 0.25s;
+  }
+
+  .film-strip.active .film-strip-inner {
+    opacity: 1;
+  }
+
+  .menu-items {
+    list-style: none;
+    width: 100%;
+    margin: 10px 0 20px;
+  }
+
+  .menu-items li {
+    border-bottom: 1px solid #2a211c;
+  }
+
+  .menu-items li:last-child {
+    border-bottom: none;
+  }
+
+  .menu-items a {
+    display: block;
+    padding: 18px 6px;
+    text-align: center;
+    text-decoration: none;
+    color: #ede6d6;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 0.95rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    transition: color 0.3s ease, letter-spacing 0.4s ease;
+  }
+
+  .menu-items a:hover {
+    color: #fff;
+    letter-spacing: 0.28em;
+  }
+
+  /* ---------- CLOSE BUTTON ---------- */
+  .menu-close {
+    background: transparent;
+    border: 1px solid #4a3f36;
+    color: #ede6d6;
+    padding: 8px 18px;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  }
+
+  .menu-close:hover {
+    background: #ede6d6;
+    color: #1a1613;
+    border-color: #ede6d6;
+  }
+
+  .menu-close:focus {
+    outline: none;
+  }
+
+  .menu-close:focus-visible {
+    outline: 1px dashed #ede6d6;
+    outline-offset: 3px;
+  }
+
+  /* ---------- MOBILE ADJUSTMENTS ---------- */
+  @media (max-width: 480px) {
+    .film-strip {
+      width: 84vw;
+      max-width: 320px;
+    }
+
+    .film-strip-inner {
+      padding: 32px 46px 24px;
+    }
+
+    .menu-items a {
+      font-size: 0.9rem;
+      padding: 16px 6px;
+    }
+
+    .site-title {
+      font-size: 1.05rem;
+    }
+  }
+
+  /* Respect users who prefer reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .film-strip,
+    .menu-overlay,
+    .film-strip-inner {
+      transition: opacity 0.2s ease;
+    }
+    .film-strip {
+      transform: translateX(-50%) scaleY(1);
+      opacity: 0;
+      pointer-events: none;
+    }
+    .film-strip.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+</style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <button
+      class="hamburger"
+      id="hamburgerBtn"
+      aria-label="Open menu"
+      aria-expanded="false"
+      aria-controls="filmMenu"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <div class="site-title">Faraway Postcards</div>
+  </header>
+
+  <!-- DEMO PAGE CONTENT -->
+  <main class="page-content">
+    <h1>Film Menu Test Page</h1>
+    <p>
+      This is a standalone test file for the cinematic film-strip menu.
+      Tap the hamburger icon at the top left to open the menu.
+      This file does not affect any existing pages on the website.
+    </p>
+  </main>
+
+  <!-- BACKDROP OVERLAY -->
+  <div class="menu-overlay" id="menuOverlay"></div>
+
+  <!-- FILM STRIP MENU -->
+  <nav
+    class="film-strip"
+    id="filmMenu"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Main navigation"
+  >
+    <!-- Left sprockets -->
+    <div class="sprocket-column left" aria-hidden="true">
+      <div class="sprocket"></div>
+      <div class="sprocket"></div>
+      <div class="sprocket"></div>
+      <div class="sprocket"></div>
+      <div class="sprocket"></div>
+      <div class="sprocket"></div>
+      <div class="sprocket"></div>
+      <div class="sprocket"></div>
+    </div>
+
+    <!-- Right sprockets -->
+    <div class="sprocket-column right" aria-hidden="true">
+      <div class="sprocket"></div>
+      <div class="sprocket"></div>
+      <div class="sprocket"></div>
+      <div class="sprocket"></div>
+      <div class="sprocket"></div>
+      <div class="sprocket"></div>
+      <div class="sprocket"></div>
+      <div class="sprocket"></div>
+    </div>
+
+    <!-- Inner content -->
+    <div class="film-strip-inner">
+      <ul class="menu-items">
+        <li><a href="#" data-page="home">Home</a></li>
+        <li><a href="#" data-page="about">About</a></li>
+        <li><a href="#" data-page="destination">Destination</a></li>
+        <li><a href="#" data-page="experience">Experience</a></li>
+      </ul>
+
+      <button class="menu-close" id="menuCloseBtn" aria-label="Close menu">
+        Close
+      </button>
+    </div>
+  </nav>
+
+  <script>
+    (function () {
+      'use strict';
+
+      const hamburger   = document.getElementById('hamburgerBtn');
+      const filmMenu    = document.getElementById('filmMenu');
+      const overlay     = document.getElementById('menuOverlay');
+      const closeBtn    = document.getElementById('menuCloseBtn');
+      const menuLinks   = filmMenu.querySelectorAll('.menu-items a');
+
+      function openMenu() {
+        filmMenu.classList.add('active');
+        overlay.classList.add('active');
+        hamburger.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeMenu() {
+        filmMenu.classList.remove('active');
+        overlay.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      }
+
+      hamburger.addEventListener('click', function (e) {
+        e.stopPropagation();
+        if (filmMenu.classList.contains('active')) {
+          closeMenu();
+        } else {
+          openMenu();
+        }
+      });
+
+      closeBtn.addEventListener('click', closeMenu);
+      overlay.addEventListener('click', closeMenu);
+
+      // Close on Escape key
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && filmMenu.classList.contains('active')) {
+          closeMenu();
+        }
+      });
+
+      // Demo: clicking menu items just closes the menu in this test file
+      menuLinks.forEach(function (link) {
+        link.addEventListener('click', function (e) {
+          e.preventDefault();
+          closeMenu();
+          // For real integration later, replace with actual navigation:
+          // window.location.href = link.getAttribute('href');
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>
