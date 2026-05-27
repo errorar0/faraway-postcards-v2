@@ -165,7 +165,7 @@ scrollbar-width: none;
 
 .filter-row::before {
 content: "";
-flex: 0 0 46px;
+flex: 0 0 70px;
 }
 
 .filter-row::-webkit-scrollbar {
@@ -338,7 +338,7 @@ gap: 48px;
 
 .filter-row::before {
 content: "";
-flex: 0 0 46px;
+flex: 0 0 70px;
 }
 
 .article-feed {
@@ -444,147 +444,6 @@ atmosphere over itinerary.
 </div>
 
 </section>
-
-<main class="article-feed">
-
-<article class="article">
-<div class="article-image-wrap">
-<img
-src="https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=1400&q=80"
-alt="Limestone cliffs over still water"
-loading="lazy"
-/>
-</div>
-<div class="article-meta">
-<span>Thailand</span>
-<span>Guidebook</span>
-</div>
-<h2 class="article-title">
-Two weeks in southern Thailand, from rainforest to coast.
-</h2>
-</article>
-
-<article class="article">
-<div class="article-image-wrap">
-<img
-src="https://images.unsplash.com/photo-1543158266-0066955047b0?auto=format&fit=crop&w=1400&q=80"
-alt="Mountain monastery at dusk"
-loading="lazy"
-/>
-</div>
-<div class="article-meta">
-<span>Armenia</span>
-<span>UNESCO</span>
-</div>
-<h2 class="article-title">
-Old stone, cold wind, and the quiet roads of Lori.
-</h2>
-</article>
-
-<article class="article">
-<div class="article-image-wrap">
-<img
-src="https://images.unsplash.com/photo-1605640840605-14ac1855827b?auto=format&fit=crop&w=1400&q=80"
-alt="Rice terraces in mist"
-loading="lazy"
-/>
-</div>
-<div class="article-meta">
-<span>Indonesia</span>
-<span>Architecture</span>
-</div>
-<h2 class="article-title">
-Slow mornings in the highland villages of Bali.
-</h2>
-</article>
-
-<article class="article">
-<div class="article-image-wrap">
-<img
-src="https://images.unsplash.com/photo-1504457047772-27faf1c00561?auto=format&fit=crop&w=1400&q=80"
-alt="Himalayan valley"
-loading="lazy"
-/>
-</div>
-<div class="article-meta">
-<span>Nepal</span>
-<span>Animal Watching</span>
-</div>
-<h2 class="article-title">
-Walking the lower valleys before the snow returns.
-</h2>
-</article>
-
-<article class="article">
-<div class="article-image-wrap">
-<img
-src="https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1400&q=80"
-alt="Coastal village at dusk"
-loading="lazy"
-/>
-</div>
-<div class="article-meta">
-<span>Vietnam</span>
-<span>Food</span>
-</div>
-<h2 class="article-title">
-A long lunch in a fishing village south of Hoi An.
-</h2>
-</article>
-
-</main>
-
-<footer class="site-footer">
-Faraway Postcards — Editorial Prototype
-</footer>
-
-<script>
-(function () {
-'use strict';
-
-const logo = document.getElementById('siteLogo');
-if (logo) {
-logo.addEventListener('click', function () {
-window.scrollTo({ top: 0, behavior: 'smooth' });
-});
-}
-
-const filterRows = document.querySelectorAll('.filter-row');
-filterRows.forEach(function (row) {
-const chips = row.querySelectorAll('.filter-chip');
-chips.forEach(function (chip) {
-chip.addEventListener('click', function () {
-chips.forEach(function (c) { c.classList.remove('active'); });
-chip.classList.add('active');
-});
-});
-});
-
-const articles = document.querySelectorAll('.article');
-
-if ('IntersectionObserver' in window) {
-const observer = new IntersectionObserver(function (entries) {
-entries.forEach(function (entry) {
-if (entry.isIntersecting) {
-entry.target.classList.add('visible');
-observer.unobserve(entry.target);
-}
-});
-}, {
-threshold: 0.15,
-rootMargin: '0px 0px -60px 0px'
-});
-
-articles.forEach(function (article) {
-observer.observe(article);
-});
-} else {
-articles.forEach(function (article) {
-article.classList.add('visible');
-});
-}
-})();
-</script>
 
 </body>
 </html>
