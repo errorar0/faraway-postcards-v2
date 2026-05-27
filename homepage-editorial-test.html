@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Faraway Postcards — Editorial Homepage Prototype</title>
+
+<style>
+  /* ============================================
+     RESET & BASE
+     ============================================ */
+  *,
+  *::before,
+  *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    background: #f5f1ea;          /* muted beige / ivory */
+    color: #2a2520;                /* warm black-brown */
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  /* ============================================
+     STICKY HEADER
+     ============================================ */
+  .site-header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #1a1613;           /* warm black */
+    color: #ede6d6;                /* ivory */
+    z-index: 100;
+    padding: 20px 24px;
+    text-align: center;
+    border-bottom: 1px solid #2a2520;
+  }
+
+  .site-logo {
+    display: inline-block;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-weight: 400;
+    font-size: 1.05rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: #ede6d6;
+    cursor: pointer;
+    transition: color 0.4s ease, letter-spacing 0.5s ease;
+    background: transparent;
+    border: none;
+    padding: 4px 0;
+  }
+
+  .site-logo:hover {
+    color: #fff;
+    letter-spacing: 0.32em;
+  }
+
+  .site-logo:focus {
+    outline: none;
+  }
+
+  .site-logo:focus-visible {
+    outline: 1px dashed #ede6d6;
+    outline-offset: 6px;
+  }
+
+  /* ============================================
+     HERO SECTION
+     ============================================ */
+  .hero {
+    padding: 56px 20px 0;
+    max-width: 920px;
+    margin: 0 auto;
+  }
+
+  .hero-image-wrap {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 2px;
+    background: #2a2520;
+    aspect-ratio: 4 / 5;
+  }
+
+  .hero-image-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.94) contrast(1.02);
+  }
+
+  .hero-text {
+    padding: 44px 4px 0;
+  }
+
+  .hero-headline {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: clamp(1.85rem, 6.5vw, 2.9rem);
+    line-height: 1.18;
+    letter-spacing: 0.005em;
+    color: #1f1a16;
+    margin-bottom: 28px;
+    max-width: 16ch;
+  }
+
+  .hero-description {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.92rem;
+    line-height: 1.85;
+    color: #5a4f44;
+    max-width: 38ch;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+  }
+
+  /* ============================================
+     FILTER SECTIONS
+     ============================================ */
+  .filters {
+    margin-top: 80px;
+    padding: 0;
+  }
+
+  .filter-group {
+    margin-bottom: 36px;
+  }
+
+  .filter-label {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: #8a7f72;
+    padding: 0 24px;
+    margin-bottom: 18px;
+    font-weight: 500;
+  }
+
+  .filter-row {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 4px 24px 14px;
+    scroll-snap-type: x proximity;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .filter-row::-webkit-scrollbar {
+    display: none;
+  }
+
+  .filter-chip {
+    flex: 0 0 auto;
+    padding: 10px 18px;
+    background: transparent;
+    border: 1px solid #c9bfae;
+    border-radius: 999px;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #4a3f36;
+    cursor: pointer;
+    transition: background 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+    scroll-snap-align: start;
+    white-space: nowrap;
+  }
+
+  .filter-chip:hover {
+    background: #2a2520;
+    color: #ede6d6;
+    border-color: #2a2520;
+  }
+
+  .filter-chip.active {
+    background: #1a1613;
+    color: #ede6d6;
+    border-color: #1a1613;
+  }
+
+  .filter-chip:focus {
+    outline: none;
+  }
+
+  .filter-chip:focus-visible {
+    outline: 1px dashed #1a1613;
+    outline-offset: 3px;
+  }
+
+  /* ============================================
+     ARTICLE FEED
+     ============================================ */
+  .article-feed {
+    padding: 80px 20px 100px;
+    max-width: 920px;
+    margin: 0 auto;
+  }
+
+  .article {
+    margin-bottom: 96px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1.2s ease, transform 1.2s ease;
+  }
+
+  .article.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .article:last-child {
+    margin-bottom: 20px;
+  }
+
+  .article-image-wrap {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 2px;
+    background: #2a2520;
+    aspect-ratio: 4 / 5;
+    margin-bottom: 24px;
+  }
+
+  .article-image-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.9) contrast(1.04) saturate(0.92);
+    transition: filter 1s ease, transform 4s ease;
+  }
+
+  .article:hover .article-image-wrap img {
+    filter: brightness(0.95) contrast(1.04) saturate(0.95);
+    transform: scale(1.015);
+  }
+
+  .article-meta {
+    display: flex;
+    gap: 18px;
+    margin-bottom: 16px;
+    padding: 0 2px;
+  }
+
+  .article-meta span {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #8a7f72;
+    font-weight: 500;
+  }
+
+  .article-title {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-weight: 400;
+    font-size: clamp(1.55rem, 5vw, 2.1rem);
+    line-height: 1.22;
+    color: #1f1a16;
+    letter-spacing: 0.005em;
+    padding: 0 2px;
+    max-width: 22ch;
+  }
+
+  /* ============================================
+     FOOTER
+     ============================================ */
+  .site-footer {
+    background: #1a1613;
+    color: #8a7f72;
+    text-align: center;
+    padding: 50px 20px;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+  }
+
+  /* ============================================
+     TABLET & DESKTOP REFINEMENTS
+     ============================================ */
+  @media (min-width: 768px) {
+    .site-header {
+      padding: 24px 36px;
+    }
+
+    .site-logo {
+      font-size: 1.15rem;
+    }
+
+    .hero {
+      padding: 80px 36px 0;
+    }
+
+    .hero-image-wrap {
+      aspect-ratio: 16 / 10;
+    }
+
+    .hero-text {
+      padding: 56px 4px 0;
+      display: flex;
+      gap: 60px;
+      align-items: flex-start;
+    }
+
+    .hero-headline {
+      flex: 1;
+      margin-bottom: 0;
+      font-size: clamp(2.4rem, 4vw, 3.2rem);
+    }
+
+    .hero-description {
+      flex: 0 0 320px;
+      padding-top: 12px;
+    }
+
+    .filters {
+      margin-top: 110px;
+    }
+
+    .filter-label {
+      padding: 0 36px;
+    }
+
+    .filter-row {
+      padding: 4px 36px 14px;
+    }
+
+    .article-feed {
+      padding: 110px 36px 120px;
+    }
+
+    .article {
+      margin-bottom: 130px;
+    }
+
+    .article-image-wrap {
+      aspect-ratio: 16 / 10;
+    }
+  }
+
+  @media (min-width: 1100px) {
+    .hero,
+    .article-feed {
+      max-width: 1040px;
+    }
+
+    .hero-headline {
+      font-size: 3.4rem;
+    }
+  }
+
+  /* ============================================
+     REDUCED MOTION
+     ============================================ */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    .article {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+
+    .article-image-wrap img {
+      transition: none;
+    }
+  }
+</style>
+</head>
+
+<body>
+
+  <!-- ============================================
+       STICKY HEADER
+       ============================================ -->
+  <header class="site-header">
+    <button class="site-logo" id="siteLogo" aria-label="Scroll to top">
+      Faraway Postcards
+    </button>
+  </header>
+
+  <!-- ============================================
+       HERO SECTION
+       ============================================ -->
+  <section class="hero">
+    <div class="hero-image-wrap">
+      <img
+        src="images/my-pink-photo.jpg"
+        alt="Faraway Postcards — editorial travel photograph"
+        loading="eager"
+      />
+    </div>
+
+    <div class="hero-text">
+      <h1 class="hero-headline">
+        Notes from places that ask you to slow down.
+      </h1>
+      <p class="hero-description">
+        Faraway Postcards is an independent travel journal of long walks,
+        quiet harbours, monsoon afternoons and the textures of distant
+        coastlines. Stories written slowly, for travellers who prefer
+        atmosphere over itinerary.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================
+       FILTERS
+       ============================================ -->
+  <section class="filters" aria-label="Browse">
+
+    <div class="filter-group">
+      <div class="filter-label">Country</div>
+      <div class="filter-row" role="list">
+        <button class="filter-chip" role="listitem">Armenia</button>
+        <button class="filter-chip" role="listitem">Georgia</button>
+        <button class="filter-chip" role="listitem">Nepal</button>
+        <button class="filter-chip" role="listitem">Kazakhstan</button>
+        <button class="filter-chip" role="listitem">Indonesia</button>
+        <button class="filter-chip" role="listitem">Vietnam</button>
+        <button class="filter-chip" role="listitem">Thailand</button>
+        <button class="filter-chip" role="listitem">Philippines</button>
+      </div>
+    </div>
+
+    <div class="filter-group">
+      <div class="filter-label">Experience</div>
+      <div class="filter-row" role="list">
+        <button class="filter-chip" role="listitem">UNESCO</button>
+        <button class="filter-chip" role="listitem">Architecture</button>
+        <button class="filter-chip" role="listitem">Food</button>
+        <button class="filter-chip" role="listitem">Animal Watching</button>
+        <button class="filter-chip" role="listitem">Guidebook</button>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ============================================
+       ARTICLE FEED
+       ============================================ -->
+  <main class="article-feed">
+
+    <article class="article">
+      <div class="article-image-wrap">
+        <img
+          src="https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=1400&q=80"
+          alt="Limestone cliffs over still water"
+          loading="lazy"
+        />
+      </div>
+      <div class="article-meta">
+        <span>Thailand</span>
+        <span>Guidebook</span>
+      </div>
+      <h2 class="article-title">
+        Two weeks in southern Thailand, from rainforest to coast.
+      </h2>
+    </article>
+
+    <article class="article">
+      <div class="article-image-wrap">
+        <img
+          src="https://images.unsplash.com/photo-1543158266-0066955047b0?auto=format&fit=crop&w=1400&q=80"
+          alt="Mountain monastery at dusk"
+          loading="lazy"
+        />
+      </div>
+      <div class="article-meta">
+        <span>Armenia</span>
+        <span>UNESCO</span>
+      </div>
+      <h2 class="article-title">
+        Old stone, cold wind, and the quiet roads of Lori.
+      </h2>
+    </article>
+
+    <article class="article">
+      <div class="article-image-wrap">
+        <img
+          src="https://images.unsplash.com/photo-1605640840605-14ac1855827b?auto=format&fit=crop&w=1400&q=80"
+          alt="Rice terraces in mist"
+          loading="lazy"
+        />
+      </div>
+      <div class="article-meta">
+        <span>Indonesia</span>
+        <span>Architecture</span>
+      </div>
+      <h2 class="article-title">
+        Slow mornings in the highland villages of Bali.
+      </h2>
+    </article>
+
+    <article class="article">
+      <div class="article-image-wrap">
+        <img
+          src="https://images.unsplash.com/photo-1504457047772-27faf1c00561?auto=format&fit=crop&w=1400&q=80"
+          alt="Himalayan valley"
+          loading="lazy"
+        />
+      </div>
+      <div class="article-meta">
+        <span>Nepal</span>
+        <span>Animal Watching</span>
+      </div>
+      <h2 class="article-title">
+        Walking the lower valleys before the snow returns.
+      </h2>
+    </article>
+
+    <article class="article">
+      <div class="article-image-wrap">
+        <img
+          src="https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1400&q=80"
+          alt="Coastal village at dusk"
+          loading="lazy"
+        />
+      </div>
+      <div class="article-meta">
+        <span>Vietnam</span>
+        <span>Food</span>
+      </div>
+      <h2 class="article-title">
+        A long lunch in a fishing village south of Hoi An.
+      </h2>
+    </article>
+
+  </main>
+
+  <!-- ============================================
+       FOOTER
+       ============================================ -->
+  <footer class="site-footer">
+    Faraway Postcards — Editorial Prototype
+  </footer>
+
+  <!-- ============================================
+       JAVASCRIPT
+       ============================================ -->
+  <script>
+    (function () {
+      'use strict';
+
+      /* ---------- Logo scroll-to-top ---------- */
+      const logo = document.getElementById('siteLogo');
+      if (logo) {
+        logo.addEventListener('click', function () {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+
+      /* ---------- Filter chip toggling ---------- */
+      const filterRows = document.querySelectorAll('.filter-row');
+      filterRows.forEach(function (row) {
+        const chips = row.querySelectorAll('.filter-chip');
+        chips.forEach(function (chip) {
+          chip.addEventListener('click', function () {
+            chips.forEach(function (c) { c.classList.remove('active'); });
+            chip.classList.add('active');
+          });
+        });
+      });
+
+      /* ---------- Subtle fade-in on scroll ---------- */
+      const articles = document.querySelectorAll('.article');
+
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.15,
+          rootMargin: '0px 0px -60px 0px'
+        });
+
+        articles.forEach(function (article) {
+          observer.observe(article);
+        });
+      } else {
+        // Fallback for very old browsers
+        articles.forEach(function (article) {
+          article.classList.add('visible');
+        });
+      }
+    })();
+  </script>
+
+</body>
+</html>
