@@ -5,10 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Faraway Postcards — Editorial Homepage Prototype</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
-
 <style>
 *,
 *::before,
@@ -114,7 +110,7 @@ padding: 56px 24px 0;
 }
 
 .hero-headline {
-font-family: "Baskerville", "Libre Baskerville", "Baskerville Old Face", "Hoefler Text", Georgia, serif;
+font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Georgia, serif;
 font-weight: 400;
 font-style: normal;
 font-size: clamp(1.45rem, 4.8vw, 2.25rem);
@@ -146,8 +142,8 @@ margin-bottom: 36px;
 }
 
 .filter-label {
-font-family: "Baskerville", "Libre Baskerville", "Baskerville Old Face", "Hoefler Text", Georgia, serif;
-font-weight: 700;
+font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Georgia, serif;
+font-weight: 400;
 font-size: 0.9rem;
 letter-spacing: 0.46em;
 text-transform: uppercase;
@@ -176,9 +172,9 @@ flex: 0 0 auto;
 padding: 0 0 7px;
 background: transparent;
 border: none;
-border-bottom: 1px solid rgba(42, 37, 32, 0.75);
+border-bottom: 1px solid transparent;
 border-radius: 0;
-font-family: "Baskerville", "Libre Baskerville", "Baskerville Old Face", "Hoefler Text", Georgia, serif;
+font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Georgia, serif;
 font-weight: 400;
 font-size: 1rem;
 letter-spacing: 0.12em;
@@ -191,12 +187,12 @@ white-space: nowrap;
 
 .filter-chip:hover {
 color: #000;
-border-color: #000;
+border-bottom-color: #2a2520;
 }
 
 .filter-chip.active {
 color: #000;
-border-color: #000;
+border-bottom-color: #2a2520;
 }
 
 .filter-chip:focus {
