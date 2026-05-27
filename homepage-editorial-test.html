@@ -157,10 +157,10 @@ margin-bottom: 22px;
 
 .filter-row {
 display: flex;
-gap: 14px;
+gap: 34px;
 overflow-x: auto;
 overflow-y: hidden;
-padding: 4px 24px 14px;
+padding: 4px 24px 18px;
 scroll-snap-type: x proximity;
 -webkit-overflow-scrolling: touch;
 scrollbar-width: none;
@@ -172,31 +172,30 @@ display: none;
 
 .filter-chip {
 flex: 0 0 auto;
-padding: 10px 22px;
+padding: 0 0 7px;
 background: transparent;
-border: 1px solid rgba(74, 63, 54, 0.28);
-border-radius: 1px;
+border: none;
+border-bottom: 1px solid rgba(42, 37, 32, 0.75);
+border-radius: 0;
 font-family: "Baskerville", "Libre Baskerville", "Baskerville Old Face", "Hoefler Text", Georgia, serif;
 font-weight: 400;
-font-size: 0.95rem;
-letter-spacing: 0.01em;
-color: #3a3128;
+font-size: 1rem;
+letter-spacing: 0.12em;
+color: #2a2520;
 cursor: pointer;
-transition: background 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+transition: color 0.35s ease, border-color 0.35s ease, opacity 0.35s ease;
 scroll-snap-align: start;
 white-space: nowrap;
 }
 
 .filter-chip:hover {
-background: #2a2520;
-color: #ede6d6;
-border-color: #2a2520;
+color: #000;
+border-color: #000;
 }
 
 .filter-chip.active {
-background: #1a1613;
-color: #ede6d6;
-border-color: #1a1613;
+color: #000;
+border-color: #000;
 }
 
 .filter-chip:focus {
@@ -205,7 +204,7 @@ outline: none;
 
 .filter-chip:focus-visible {
 outline: 1px dashed #1a1613;
-outline-offset: 3px;
+outline-offset: 5px;
 }
 
 .article-feed {
@@ -330,7 +329,8 @@ padding: 0 36px;
 }
 
 .filter-row {
-padding: 4px 36px 14px;
+padding: 4px 36px 18px;
+gap: 48px;
 }
 
 .article-feed {
@@ -389,7 +389,7 @@ Faraway Postcards
 <section class="hero">
 <div class="hero-image-wrap">
 <img
-src="images/my-pink-photo.jpeg"
+src="images/my-pink-photo.jpg"
 alt="Faraway Postcards — editorial travel photograph"
 loading="eager"
 />
