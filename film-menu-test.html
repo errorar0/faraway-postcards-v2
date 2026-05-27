@@ -36,7 +36,6 @@
   }
 
   .site-title {
-    font-family: Georgia, 'Times New Roman', serif;
     font-weight: 400;
     font-size: 1.25rem;
     letter-spacing: 0.18em;
@@ -85,7 +84,7 @@
     background: #fff;
   }
 
-  /* ---------- PAGE CONTENT (demo only) ---------- */
+  /* ---------- PAGE CONTENT ---------- */
   .page-content {
     max-width: 720px;
     margin: 0 auto;
@@ -107,7 +106,7 @@
     line-height: 1.7;
   }
 
-  /* ---------- OVERLAY (backdrop) ---------- */
+  /* ---------- OVERLAY ---------- */
   .menu-overlay {
     position: fixed;
     inset: 0;
@@ -125,21 +124,25 @@
     pointer-events: auto;
   }
 
-  /* ---------- FILM STRIP MENU ---------- */
+  /* ---------- FILM STRIP ---------- */
   .film-strip {
     position: fixed;
     top: 0;
     left: 50%;
     transform: translateX(-50%) scaleY(0);
     transform-origin: top center;
-    width: 280px;
+
+    width: 340px;
+
     background: #0e0b09;
     z-index: 100;
+
     transition: transform 0.55s cubic-bezier(0.22, 0.61, 0.36, 1);
+
     box-shadow:
       0 0 0 1px #0a0807,
       0 20px 60px rgba(0, 0, 0, 0.5);
-    /* subtle film grain feel using layered dark tones */
+
     background-image:
       linear-gradient(
         180deg,
@@ -203,30 +206,43 @@
     margin: 10px 0 20px;
   }
 
+  /* ---------- FILM FRAMES ---------- */
   .menu-items li {
-    border-bottom: 1px solid #2a211c;
-  }
-
-  .menu-items li:last-child {
     border-bottom: none;
+    margin-bottom: 12px;
   }
 
   .menu-items a {
     display: block;
-    padding: 18px 6px;
+    padding: 18px 10px;
+
     text-align: center;
     text-decoration: none;
-    color: #ede6d6;
-    font-family: Georgia, 'Times New Roman', serif;
-    font-size: 0.95rem;
-    letter-spacing: 0.22em;
+
+    color: #1a1613;
+    background: #ede6d6;
+
+    border: 1px solid #c8bfae;
+
+    font-size: 0.9rem;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
-    transition: color 0.3s ease, letter-spacing 0.4s ease;
+
+    transition:
+      transform 0.3s ease,
+      background 0.3s ease,
+      letter-spacing 0.3s ease;
+
+    box-shadow:
+      inset 0 0 18px rgba(0, 0, 0, 0.12),
+      0 4px 12px rgba(0, 0, 0, 0.18);
   }
 
   .menu-items a:hover {
-    color: #fff;
-    letter-spacing: 0.28em;
+    background: #fff7df;
+    color: #1a1613;
+    letter-spacing: 0.24em;
+    transform: scale(1.03);
   }
 
   /* ---------- CLOSE BUTTON ---------- */
@@ -235,13 +251,15 @@
     border: 1px solid #4a3f36;
     color: #ede6d6;
     padding: 8px 18px;
-    font-family: Georgia, 'Times New Roman', serif;
     font-size: 0.7rem;
     letter-spacing: 0.25em;
     text-transform: uppercase;
     cursor: pointer;
     margin-top: 8px;
-    transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    transition:
+      background 0.3s ease,
+      color 0.3s ease,
+      border-color 0.3s ease;
   }
 
   .menu-close:hover {
@@ -259,11 +277,11 @@
     outline-offset: 3px;
   }
 
-  /* ---------- MOBILE ADJUSTMENTS ---------- */
+  /* ---------- MOBILE ---------- */
   @media (max-width: 480px) {
     .film-strip {
-      width: 84vw;
-      max-width: 320px;
+      width: 88vw;
+      max-width: 340px;
     }
 
     .film-strip-inner {
@@ -271,8 +289,8 @@
     }
 
     .menu-items a {
-      font-size: 0.9rem;
-      padding: 16px 6px;
+      font-size: 0.82rem;
+      padding: 16px 8px;
     }
 
     .site-title {
@@ -280,18 +298,20 @@
     }
   }
 
-  /* Respect users who prefer reduced motion */
+  /* ---------- REDUCED MOTION ---------- */
   @media (prefers-reduced-motion: reduce) {
     .film-strip,
     .menu-overlay,
     .film-strip-inner {
       transition: opacity 0.2s ease;
     }
+
     .film-strip {
       transform: translateX(-50%) scaleY(1);
       opacity: 0;
       pointer-events: none;
     }
+
     .film-strip.active {
       opacity: 1;
       pointer-events: auto;
@@ -302,136 +322,137 @@
 
 <body>
 
-  <!-- HEADER -->
-  <header class="site-header">
-    <button
-      class="hamburger"
-      id="hamburgerBtn"
-      aria-label="Open menu"
-      aria-expanded="false"
-      aria-controls="filmMenu"
-    >
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-    <div class="site-title">Faraway Postcards</div>
-  </header>
+<header class="site-header">
 
-  <!-- DEMO PAGE CONTENT -->
-  <main class="page-content">
-    <h1>Film Menu Test Page</h1>
-    <p>
-      This is a standalone test file for the cinematic film-strip menu.
-      Tap the hamburger icon at the top left to open the menu.
-      This file does not affect any existing pages on the website.
-    </p>
-  </main>
-
-  <!-- BACKDROP OVERLAY -->
-  <div class="menu-overlay" id="menuOverlay"></div>
-
-  <!-- FILM STRIP MENU -->
-  <nav
-    class="film-strip"
-    id="filmMenu"
-    role="dialog"
-    aria-modal="true"
-    aria-label="Main navigation"
+  <button
+    class="hamburger"
+    id="hamburgerBtn"
+    aria-label="Open menu"
+    aria-expanded="false"
+    aria-controls="filmMenu"
   >
-    <!-- Left sprockets -->
-    <div class="sprocket-column left" aria-hidden="true">
-      <div class="sprocket"></div>
-      <div class="sprocket"></div>
-      <div class="sprocket"></div>
-      <div class="sprocket"></div>
-      <div class="sprocket"></div>
-      <div class="sprocket"></div>
-      <div class="sprocket"></div>
-      <div class="sprocket"></div>
-    </div>
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 
-    <!-- Right sprockets -->
-    <div class="sprocket-column right" aria-hidden="true">
-      <div class="sprocket"></div>
-      <div class="sprocket"></div>
-      <div class="sprocket"></div>
-      <div class="sprocket"></div>
-      <div class="sprocket"></div>
-      <div class="sprocket"></div>
-      <div class="sprocket"></div>
-      <div class="sprocket"></div>
-    </div>
+  <div class="site-title">
+    Faraway Postcards
+  </div>
 
-    <!-- Inner content -->
-    <div class="film-strip-inner">
-      <ul class="menu-items">
-        <li><a href="#" data-page="home">Home</a></li>
-        <li><a href="#" data-page="about">About</a></li>
-        <li><a href="#" data-page="destination">Destination</a></li>
-        <li><a href="#" data-page="experience">Experience</a></li>
-      </ul>
+</header>
 
-      <button class="menu-close" id="menuCloseBtn" aria-label="Close menu">
-        Close
-      </button>
-    </div>
-  </nav>
+<main class="page-content">
 
-  <script>
-    (function () {
-      'use strict';
+  <h1>Film Menu Test Page</h1>
 
-      const hamburger   = document.getElementById('hamburgerBtn');
-      const filmMenu    = document.getElementById('filmMenu');
-      const overlay     = document.getElementById('menuOverlay');
-      const closeBtn    = document.getElementById('menuCloseBtn');
-      const menuLinks   = filmMenu.querySelectorAll('.menu-items a');
+  <p>
+    Cinematic film-strip dropdown menu test.
+  </p>
 
-      function openMenu() {
-        filmMenu.classList.add('active');
-        overlay.classList.add('active');
-        hamburger.setAttribute('aria-expanded', 'true');
-        document.body.style.overflow = 'hidden';
-      }
+</main>
 
-      function closeMenu() {
-        filmMenu.classList.remove('active');
-        overlay.classList.remove('active');
-        hamburger.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
-      }
+<!-- OVERLAY -->
+<div class="menu-overlay" id="menuOverlay"></div>
 
-      hamburger.addEventListener('click', function (e) {
-        e.stopPropagation();
-        if (filmMenu.classList.contains('active')) {
-          closeMenu();
-        } else {
-          openMenu();
-        }
-      });
+<!-- FILM MENU -->
+<nav
+  class="film-strip"
+  id="filmMenu"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Main navigation"
+>
 
-      closeBtn.addEventListener('click', closeMenu);
-      overlay.addEventListener('click', closeMenu);
+  <!-- LEFT HOLES -->
+  <div class="sprocket-column left" aria-hidden="true">
+    <div class="sprocket"></div>
+    <div class="sprocket"></div>
+    <div class="sprocket"></div>
+    <div class="sprocket"></div>
+    <div class="sprocket"></div>
+    <div class="sprocket"></div>
+    <div class="sprocket"></div>
+    <div class="sprocket"></div>
+  </div>
 
-      // Close on Escape key
-      document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape' && filmMenu.classList.contains('active')) {
-          closeMenu();
-        }
-      });
+  <!-- RIGHT HOLES -->
+  <div class="sprocket-column right" aria-hidden="true">
+    <div class="sprocket"></div>
+    <div class="sprocket"></div>
+    <div class="sprocket"></div>
+    <div class="sprocket"></div>
+    <div class="sprocket"></div>
+    <div class="sprocket"></div>
+    <div class="sprocket"></div>
+    <div class="sprocket"></div>
+  </div>
 
-      // Demo: clicking menu items just closes the menu in this test file
-      menuLinks.forEach(function (link) {
-        link.addEventListener('click', function (e) {
-          e.preventDefault();
-          closeMenu();
-          // For real integration later, replace with actual navigation:
-          // window.location.href = link.getAttribute('href');
-        });
-      });
-    })();
-  </script>
+  <!-- CONTENT -->
+  <div class="film-strip-inner">
+
+    <ul class="menu-items">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Destination</a></li>
+      <li><a href="#">Experience</a></li>
+    </ul>
+
+    <button
+      class="menu-close"
+      id="menuCloseBtn"
+      aria-label="Close menu"
+    >
+      Close
+    </button>
+
+  </div>
+</nav>
+
+<script>
+(function () {
+  'use strict';
+
+  const hamburger = document.getElementById('hamburgerBtn');
+  const filmMenu  = document.getElementById('filmMenu');
+  const overlay   = document.getElementById('menuOverlay');
+  const closeBtn  = document.getElementById('menuCloseBtn');
+
+  function openMenu() {
+    filmMenu.classList.add('active');
+    overlay.classList.add('active');
+    hamburger.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMenu() {
+    filmMenu.classList.remove('active');
+    overlay.classList.remove('active');
+    hamburger.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+
+  hamburger.addEventListener('click', function (e) {
+    e.stopPropagation();
+
+    if (filmMenu.classList.contains('active')) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  });
+
+  closeBtn.addEventListener('click', closeMenu);
+  overlay.addEventListener('click', closeMenu);
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && filmMenu.classList.contains('active')) {
+      closeMenu();
+    }
+  });
+
+})();
+</script>
 
 </body>
 </html>
