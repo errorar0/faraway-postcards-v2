@@ -23,6 +23,13 @@ const articles = [
   experience: "Food",
   url: "articles/traditional-lao-desserts-worth-trying-before-they-disappear.html"
 },
+  {
+  title: "The Mood of Patan Across the Year",
+  image: "images/patan-mood-through-the-year.jpeg",
+  country: "Nepal",
+  experience: "Guidebook",
+  url: "articles/the-mood-of-patan-across-the-year.html"
+},
   
 {
   title: "Amazing Desserts Around the World Almost Nobody Knows About",
