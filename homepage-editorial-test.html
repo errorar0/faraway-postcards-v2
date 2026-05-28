@@ -487,9 +487,9 @@ articleObserver.unobserve(entry.target);
 }
 });
 }, {
-threshold: 0.65
+threshold: 0,
+rootMargin: '0px 0px -95% 0px',
 });
-
 articleCards.forEach(function (article) {
 articleObserver.observe(article);
 });
