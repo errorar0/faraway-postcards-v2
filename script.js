@@ -51,7 +51,63 @@
       toggle.setAttribute('aria-expanded', String(!isOpen));
       links.classList.toggle('is-open', !isOpen);
     });
+(function () {
+  'use strict';
 
+  var isArticlePage = window.location.pathname.includes('/articles/');
+  var prefix = isArticlePage ? '../' : '';
+
+  var headerSlot = document.getElementById('site-header');
+  if (!headerSlot) return;
+
+  headerSlot.innerHTML = `
+    <header class="site-header">
+      <button
+        class="hamburger"
+        id="hamburgerBtn"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="filmMenu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <a href="${prefix}index.html" class="site-logo">
+        FARAWAY POSTCARDS
+      </a>
+    </header>
+
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <nav class="film-strip" id="filmMenu" role="dialog" aria-modal="true">
+      <div class="sprocket-column left" aria-hidden="true">
+        <div class="sprocket"></div><div class="sprocket"></div><div class="sprocket"></div>
+        <div class="sprocket"></div><div class="sprocket"></div><div class="sprocket"></div>
+        <div class="sprocket"></div><div class="sprocket"></div><div class="sprocket"></div>
+      </div>
+
+      <div class="sprocket-column right" aria-hidden="true">
+        <div class="sprocket"></div><div class="sprocket"></div><div class="sprocket"></div>
+        <div class="sprocket"></div><div class="sprocket"></div><div class="sprocket"></div>
+        <div class="sprocket"></div><div class="sprocket"></div><div class="sprocket"></div>
+      </div>
+
+      <div class="film-strip-inner">
+        <ul class="menu-items">
+          <li><a href="${prefix}about.html">About</a></li>
+          <li><a href="${prefix}index.html#articleFeed">Journal</a></li>
+          <li><a href="${prefix}index.html">Home</a></li>
+        </ul>
+
+        <button class="menu-close" id="menuCloseBtn">
+          Close
+        </button>
+      </div>
+    </nav>
+  `;
+})();
     // Close menu when a link is clicked (useful on mobile)
     links.addEventListener('click', function (event) {
       var target = event.target;
