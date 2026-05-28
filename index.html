@@ -80,7 +80,277 @@ outline: none;
 outline: 1px dashed #ede6d6;
 outline-offset: 6px;
 }
+/* ---------- HAMBURGER ---------- */
+.hamburger {
+  position: absolute;
 
+  left: 20px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: 38px;
+  height: 38px;
+
+  border: none;
+  background: transparent;
+
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+
+  padding: 0;
+}
+
+.hamburger span {
+  width: 22px;
+  height: 1.5px;
+
+  background: #ede6d6;
+
+  transition: 0.3s ease;
+}
+
+.hamburger:hover span {
+  background: white;
+}
+
+/* ---------- OVERLAY ---------- */
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(20, 16, 13, 0.55);
+
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+  opacity: 0;
+  pointer-events: none;
+
+  transition: opacity 0.4s ease;
+
+  z-index: 50;
+}
+
+.menu-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ---------- FILM STRIP ---------- */
+.film-strip {
+  position: fixed;
+
+  top: 0;
+  left: 20px;
+
+  transform: scaleY(0);
+  transform-origin: top left;
+
+  width: 340px;
+
+  background: #0e0b09;
+
+  z-index: 100;
+
+  transition: transform 0.55s cubic-bezier(0.22, 0.61, 0.36, 1);
+
+  box-shadow:
+    0 0 0 1px #0a0807,
+    0 20px 60px rgba(0, 0, 0, 0.5);
+
+  background-image:
+    linear-gradient(
+      180deg,
+      #0e0b09 0%,
+      #110d0a 50%,
+      #0e0b09 100%
+    );
+}
+
+.film-strip.active {
+  transform: scaleY(1);
+}
+
+/* ---------- SPROCKETS ---------- */
+.sprocket-column {
+  position: absolute;
+
+  top: 0;
+  bottom: 0;
+
+  width: 32px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  padding: 14px 0;
+
+  pointer-events: none;
+}
+
+.sprocket-column.left {
+  left: 0;
+}
+
+.sprocket-column.right {
+  right: 0;
+}
+
+.sprocket {
+  width: 14px;
+  height: 9px;
+
+  margin: 0 auto;
+
+  border-radius: 1.5px;
+
+  background: #f5f1ea;
+
+  box-shadow: inset 0 0 2px rgba(0,0,0,0.4);
+}
+
+/* ---------- INNER ---------- */
+.film-strip-inner {
+  padding: 36px 50px 28px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  opacity: 0;
+
+  transition: opacity 0.4s ease 0.25s;
+}
+
+.film-strip.active .film-strip-inner {
+  opacity: 1;
+}
+
+/* ---------- MENU ---------- */
+.menu-items {
+  width: 100%;
+
+  list-style: none;
+
+  margin: 10px 0 20px;
+}
+
+.menu-items li {
+  margin-bottom: 12px;
+}
+
+.menu-items a {
+  display: block;
+
+  padding: 18px 10px;
+
+  background: #ede6d6;
+  color: #1a1613;
+
+  text-decoration: none;
+  text-align: center;
+
+  border: 1px solid #c8bfae;
+
+  font-size: 0.9rem;
+
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    letter-spacing 0.3s ease;
+
+  box-shadow:
+    inset 0 0 18px rgba(0,0,0,0.12),
+    0 4px 12px rgba(0,0,0,0.18);
+}
+
+.menu-items a:hover {
+  background: #fff7df;
+
+  transform: scale(1.03);
+
+  letter-spacing: 0.24em;
+}
+
+/* ---------- CLOSE ---------- */
+.menu-close {
+  border: 1px solid #4a3f36;
+  background: transparent;
+
+  color: #ede6d6;
+
+  padding: 8px 18px;
+
+  cursor: pointer;
+
+  font-size: 0.7rem;
+
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+
+  transition: 0.3s ease;
+}
+
+.menu-close:hover {
+  background: #ede6d6;
+  color: #1a1613;
+  border-color: #ede6d6;
+}
+
+/* ---------- MOBILE ---------- */
+@media (max-width: 480px) {
+
+  .film-strip {
+    left: 12px;
+
+    width: calc(100vw - 24px);
+    max-width: 340px;
+  }
+
+  .film-strip-inner {
+    padding: 30px 44px 24px;
+  }
+
+  .menu-items a {
+    font-size: 0.82rem;
+  }
+
+  .site-title {
+    font-size: 1rem;
+  }
+}
+
+/* ---------- REDUCED MOTION ---------- */
+@media (prefers-reduced-motion: reduce) {
+
+  .film-strip,
+  .menu-overlay,
+  .film-strip-inner {
+    transition: opacity 0.2s ease;
+  }
+
+  .film-strip {
+    transform: scaleY(1);
+
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .film-strip.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
 .hero {
 width: 100%;
 margin: 0;
