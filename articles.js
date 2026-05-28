@@ -39,9 +39,9 @@ const articles = [
   experience: "Food"
 },
 
-{
+  {
   title: "Slow Travel in Nepal Among Golden Temples, Hidden Courtyards, and Old Brick Streets",
-  image: "images/nepal-patan-slow-travel-cover.jpeg",
+  image: "images/nepal-patan-slow-travel-hero.jpeg",
   country: "Nepal",
   experience: "Architecture",
   url: "articles/slow-travel-in-nepal-among-golden-temples-and-old-brick-streets.html"
