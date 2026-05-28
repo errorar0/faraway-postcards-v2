@@ -398,10 +398,64 @@ transition: none;
 <body>
 
 <header class="site-header">
-<button class="site-logo" id="siteLogo" aria-label="Scroll to top">
-Faraway Postcards
-</button>
+
+  <button
+    class="hamburger"
+    id="hamburgerBtn"
+    aria-label="Open menu"
+    aria-expanded="false"
+    aria-controls="filmMenu"
+  >
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <button class="site-logo" id="siteLogo" aria-label="Scroll to top">
+    Faraway Postcards
+  </button>
+
 </header>
+
+<div class="menu-overlay" id="menuOverlay"></div>
+
+<nav
+  class="film-strip"
+  id="filmMenu"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Main navigation"
+>
+  <div class="sprocket-column left" aria-hidden="true">
+    <div class="sprocket"></div><div class="sprocket"></div><div class="sprocket"></div><div class="sprocket"></div>
+    <div class="sprocket"></div><div class="sprocket"></div><div class="sprocket"></div><div class="sprocket"></div>
+  </div>
+
+  <div class="sprocket-column right" aria-hidden="true">
+    <div class="sprocket"></div><div class="sprocket"></div><div class="sprocket"></div><div class="sprocket"></div>
+    <div class="sprocket"></div><div class="sprocket"></div><div class="sprocket"></div><div class="sprocket"></div>
+  </div>
+
+  <div class="film-strip-inner">
+
+    <ul class="menu-items">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="#articleFeed">Destination</a></li>
+      <li><a href="#articleFeed">Experience</a></li>
+    </ul>
+
+    <button
+      class="menu-close"
+      id="menuCloseBtn"
+      aria-label="Close menu"
+    >
+      Close
+    </button>
+
+  </div>
+
+</nav>
 
 <section class="hero">
 <div class="hero-image-wrap">
