@@ -8,17 +8,51 @@
 <link rel="stylesheet" href="../styles.css?v=10">
 </head>
 
-<body>
-<header class="nav">
-  <div class="nav__inner">
-    <a href="../index.html" class="nav__logo">Faraway Postcards</a>
+<header class="site-header">
 
-    <nav class="nav__links">
-      <a href="../index.html">Home</a>
-      <a href="../about.html">About</a>
-    </nav>
-  </div>
+  <button
+    class="hamburger"
+    id="hamburgerBtn"
+    aria-label="Open menu"
+    aria-expanded="false"
+    aria-controls="filmMenu"
+  >
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <a href="../index.html" class="site-logo">
+    Faraway Postcards
+  </a>
+
 </header>
+
+<div class="menu-overlay" id="menuOverlay"></div>
+
+<nav class="film-strip" id="filmMenu" role="dialog" aria-modal="true" aria-label="Main navigation">
+  <div class="sprocket-column left" aria-hidden="true">
+    <div class="sprocket"></div><div class="sprocket"></div><div class="sprocket"></div><div class="sprocket"></div>
+    <div class="sprocket"></div><div class="sprocket"></div><div class="sprocket"></div><div class="sprocket"></div>
+  </div>
+
+  <div class="sprocket-column right" aria-hidden="true">
+    <div class="sprocket"></div><div class="sprocket"></div><div class="sprocket"></div><div class="sprocket"></div>
+    <div class="sprocket"></div><div class="sprocket"></div><div class="sprocket"></div><div class="sprocket"></div>
+  </div>
+
+  <div class="film-strip-inner">
+    <ul class="menu-items">
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../index.html#articleFeed">Journal</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+    </ul>
+
+    <button class="menu-close" id="menuCloseBtn" aria-label="Close menu">
+      Close
+    </button>
+  </div>
+</nav>
 
 <article class="article">
 
