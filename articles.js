@@ -8,6 +8,14 @@ const articles = [
   url: "articles/the-most-atmospheric-places-in-monaco-in-the-early-morning.html"
 },
   
+  {
+  title: "Quiet Thailand: Two Weeks Among Birds, Lakes, Jungles, and Sea Air",
+  image: "images/thailand-birdwatching-slow-travel.jpeg",
+  country: "Thailand",
+  experience: "Wildlife",
+  url: "articles/quiet-thailand-two-weeks-among-birds-lakes-jungles-and-sea-air.html"
+},
+  
 {
   title: "Amazing Desserts Around the World Almost Nobody Knows About",
   url: "articles/amazing-desserts-around-the-world.html",
