@@ -218,8 +218,9 @@ margin: 0 auto;
 .article {
 margin-bottom: 96px;
 opacity: 0;
-transform: translateY(20px);
+transform: translateY(28px);
 transition: opacity 1.2s ease, transform 1.2s ease;
+will-change: opacity, transform;
 }
 
 .article.visible {
@@ -469,7 +470,30 @@ const filterButtons = document.querySelectorAll('.filter-chip');
 
 let activeCountry = null;
 let activeExperience = null;
+let articleObserver = null;
 
+function observeArticles() {
+const articleCards = document.querySelectorAll('.article');
+
+if (articleObserver) {
+articleObserver.disconnect();
+}
+
+articleObserver = new IntersectionObserver(function (entries) {
+entries.forEach(function (entry) {
+if (entry.isIntersecting) {
+entry.target.classList.add('visible');
+articleObserver.unobserve(entry.target);
+}
+});
+}, {
+threshold: 0.18
+});
+
+articleCards.forEach(function (article) {
+articleObserver.observe(article);
+});
+}
 function renderArticles() {
 feed.innerHTML = '';
 
@@ -489,7 +513,7 @@ return;
 
 filteredArticles.forEach(function (article) {
 const card = document.createElement('article');
-card.className = 'article visible';
+card.className = 'article ';
 
 card.innerHTML = `
 <a href="${article.url}">
@@ -506,6 +530,7 @@ card.innerHTML = `
 
 feed.appendChild(card);
 });
+  observeArticles();
 }
 
 filterButtons.forEach(function (button) {
