@@ -33,6 +33,14 @@ const articles = [
 },
 
 {
+  title: "Slow Travel in Nepal Among Golden Temples, Hidden Courtyards, and Old Brick Streets",
+  image: "images/nepal-patan-slow-travel-cover.jpeg",
+  country: "Nepal",
+  experience: "Architecture",
+  url: "articles/slow-travel-in-nepal-among-golden-temples-and-old-brick-streets.html"
+},
+  
+{
   title: "How France Changed the Taste of Vietnam",
   url: "articles/how-france-changed-the-taste-of-vietnam.html",
   image: "images/Vietnam-taste-french-hero.jpeg",
