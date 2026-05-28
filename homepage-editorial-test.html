@@ -470,6 +470,32 @@ const filterButtons = document.querySelectorAll('.filter-chip');
 let activeCountry = null;
 let activeExperience = null;
 
+  function observeArticles() {
+const articleCards = document.querySelectorAll('.article');
+
+if ('IntersectionObserver' in window) {
+const observer = new IntersectionObserver(function (entries) {
+entries.forEach(function (entry) {
+if (entry.isIntersecting) {
+entry.target.classList.add('visible');
+observer.unobserve(entry.target);
+}
+});
+}, {
+threshold: 0.15,
+rootMargin: '0px 0px -60px 0px'
+});
+
+articleCards.forEach(function (article) {
+observer.observe(article);
+});
+} else {
+articleCards.forEach(function (article) {
+article.classList.add('visible');
+});
+}
+}
+
 function renderArticles() {
 feed.innerHTML = '';
 
@@ -547,6 +573,8 @@ window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 renderArticles();
+
+  observeArticles();
 
 })();
 </script>
