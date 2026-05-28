@@ -627,14 +627,18 @@ a:focus-visible {
 
 .menu-items {
   width: 100%;
-
   list-style: none;
-
   margin: 10px 0 20px;
+  padding: 0;
 }
 
 .menu-items li {
   margin-bottom: 12px;
+  padding: 0;
+}
+
+.film-strip * {
+  box-sizing: border-box;
 }
 
 .menu-items a {
