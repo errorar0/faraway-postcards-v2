@@ -15,6 +15,14 @@ const articles = [
   experience: "Wildlife",
   url: "articles/quiet-thailand-two-weeks-among-birds-lakes-jungles-and-sea-air.html"
 },
+
+  {
+  title: "Traditional Lao Desserts Worth Trying Before They Disappear",
+  image: "images/laos-traditional-desserts-cover.jpeg",
+  country: "Laos",
+  experience: "Food",
+  url: "articles/traditional-lao-desserts-worth-trying-before-they-disappear.html"
+},
   
 {
   title: "Amazing Desserts Around the World Almost Nobody Knows About",
