@@ -9,387 +9,387 @@
 *,
 *::before,
 *::after {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html {
-scroll-behavior: smooth;
--webkit-font-smoothing: antialiased;
--moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-font-family: Georgia, 'Times New Roman', serif;
-background: #f5f1ea;
-color: #2a2520;
-line-height: 1.6;
-overflow-x: hidden;
+  font-family: Georgia, 'Times New Roman', serif;
+  background: #f5f1ea;
+  color: #2a2520;
+  line-height: 1.6;
+  overflow-x: hidden;
 }
 
 img {
-display: block;
-max-width: 100%;
-height: auto;
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 a {
-color: inherit;
-text-decoration: none;
+  color: inherit;
+  text-decoration: none;
 }
 
 .site-header {
-position: sticky;
-top: 0;
-left: 0;
-width: 100%;
-background: #1a1613;
-color: #ede6d6;
-z-index: 100;
-padding: 20px 24px;
-text-align: center;
-border-bottom: 1px solid #2a2520;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #1a1613;
+  color: #ede6d6;
+  z-index: 100;
+  padding: 20px 24px;
+  text-align: center;
+  border-bottom: 1px solid #2a2520;
 }
 
 .site-logo {
-display: inline-block;
-font-family: Georgia, 'Times New Roman', serif;
-font-weight: 400;
-font-size: 1.05rem;
-letter-spacing: 0.28em;
-text-transform: uppercase;
-color: #ede6d6;
-cursor: pointer;
-transition: color 0.4s ease, letter-spacing 0.5s ease;
-background: transparent;
-border: none;
-padding: 4px 0;
+  display: inline-block;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  font-size: 1.05rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #ede6d6;
+  cursor: pointer;
+  transition: color 0.4s ease, letter-spacing 0.5s ease;
+  background: transparent;
+  border: none;
+  padding: 4px 0;
 }
 
 .site-logo:hover {
-color: #fff;
-letter-spacing: 0.32em;
+  color: #fff;
+  letter-spacing: 0.32em;
 }
 
 .site-logo:focus {
-outline: none;
+  outline: none;
 }
 
 .site-logo:focus-visible {
-outline: 1px dashed #ede6d6;
-outline-offset: 6px;
+  outline: 1px dashed #ede6d6;
+  outline-offset: 6px;
 }
 
 .hero {
-width: 100%;
-margin: 0;
-padding: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .hero-image-wrap {
-width: 100%;
-margin: 0;
-overflow: hidden;
-background: #2a2520;
-border-radius: 0;
-aspect-ratio: 4 / 5;
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: #2a2520;
+  border-radius: 0;
+  aspect-ratio: 4 / 5;
 }
 
 .hero-image-wrap img {
-width: 100%;
-height: 100%;
-object-fit: cover;
-filter: brightness(0.94) contrast(1.02);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.94) contrast(1.02);
 }
 
 .hero-text {
-max-width: 920px;
-margin: 0 auto;
-padding: 56px 24px 0;
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 56px 24px 0;
 }
 
 .hero-headline {
-font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Georgia, serif;
-font-weight: 400;
-font-style: normal;
-font-size: clamp(1.45rem, 4.8vw, 2.25rem);
-line-height: 1.38;
-letter-spacing: 0.12em;
-text-transform: uppercase;
-color: #1f1a16;
-margin-bottom: 28px;
-max-width: 28ch;
+  font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Georgia, serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: clamp(1.45rem, 4.8vw, 2.25rem);
+  line-height: 1.38;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #1f1a16;
+  margin-bottom: 28px;
+  max-width: 28ch;
 }
 
 .hero-description {
-font-family: Georgia, 'Times New Roman', serif;
-font-size: 0.95rem;
-line-height: 1.85;
-color: #5a4f44;
-max-width: 40ch;
-font-weight: 400;
-letter-spacing: 0.005em;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 0.95rem;
+  line-height: 1.85;
+  color: #5a4f44;
+  max-width: 40ch;
+  font-weight: 400;
+  letter-spacing: 0.005em;
 }
 
 .filters {
-margin-top: 80px;
-padding: 0;
+  margin-top: 80px;
+  padding: 0;
 }
 
 .filter-group {
-margin-bottom: 36px;
+  margin-bottom: 36px;
 }
 
 .filter-label {
-font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Georgia, serif;
-font-weight: 400;
-font-size: 0.9rem;
-letter-spacing: 0.46em;
-text-transform: uppercase;
-color: #2a2520;
-padding: 0 24px 0 46px;
-margin-bottom: 24px;
+  font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Georgia, serif;
+  font-weight: 400;
+  font-size: 0.9rem;
+  letter-spacing: 0.46em;
+  text-transform: uppercase;
+  color: #2a2520;
+  padding: 0 24px 0 46px;
+  margin-bottom: 24px;
 }
 
 .filter-row {
-display: flex;
-gap: 34px;
-overflow-x: auto;
-overflow-y: hidden;
-padding: 4px 24px 18px 0;
-scroll-snap-type: x proximity;
--webkit-overflow-scrolling: touch;
-scrollbar-width: none;
+  display: flex;
+  gap: 34px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 4px 24px 18px 0;
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
 }
 
 .filter-row::before {
-content: "";
-flex: 0 0 46px;
+  content: "";
+  flex: 0 0 46px;
 }
 
 .filter-row::-webkit-scrollbar {
-display: none;
+  display: none;
 }
 
 .filter-chip {
-flex: 0 0 auto;
-padding: 0 0 7px;
-background: transparent;
-border: none;
-border-bottom: 1px solid transparent;
-border-radius: 0;
-font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Georgia, serif;
-font-weight: 400;
-font-size: 1rem;
-letter-spacing: 0.12em;
-color: #2a2520;
-cursor: pointer;
-transition: color 0.35s ease, border-color 0.35s ease, opacity 0.35s ease;
-scroll-snap-align: start;
-white-space: nowrap;
+  flex: 0 0 auto;
+  padding: 0 0 7px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid transparent;
+  border-radius: 0;
+  font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Georgia, serif;
+  font-weight: 400;
+  font-size: 1rem;
+  letter-spacing: 0.12em;
+  color: #2a2520;
+  cursor: pointer;
+  transition: color 0.35s ease, border-color 0.35s ease, opacity 0.35s ease;
+  scroll-snap-align: start;
+  white-space: nowrap;
 }
 
 .filter-chip:hover {
-color: #000;
-border-bottom-color: #2a2520;
+  color: #000;
+  border-bottom-color: #2a2520;
 }
 
 .filter-chip.active {
-color: #000;
-border-bottom-color: #2a2520;
+  color: #000;
+  border-bottom-color: #2a2520;
 }
 
 .filter-chip:focus {
-outline: none;
+  outline: none;
 }
 
 .filter-chip:focus-visible {
-outline: 1px dashed #1a1613;
-outline-offset: 5px;
+  outline: 1px dashed #1a1613;
+  outline-offset: 5px;
 }
 
 .article-feed {
-padding: 80px 20px 100px;
-max-width: 920px;
-margin: 0 auto;
+  padding: 80px 20px 100px;
+  max-width: 920px;
+  margin: 0 auto;
 }
 
 .article {
-margin-bottom: 96px;
-opacity: 0;
-transform: translateY(20px);
-transition: opacity 1.2s ease, transform 1.2s ease;
+  margin-bottom: 96px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1.2s ease, transform 1.2s ease;
 }
 
 .article.visible {
-opacity: 1;
-transform: translateY(0);
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .article:last-child {
-margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .article-image-wrap {
-width: 100%;
-overflow: hidden;
-border-radius: 2px;
-background: #2a2520;
-aspect-ratio: 4 / 5;
-margin-bottom: 24px;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 2px;
+  background: #2a2520;
+  aspect-ratio: 4 / 5;
+  margin-bottom: 24px;
 }
 
 .article-image-wrap img {
-width: 100%;
-height: 100%;
-object-fit: cover;
-filter: brightness(0.9) contrast(1.04) saturate(0.92);
-transition: filter 1s ease, transform 4s ease;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.9) contrast(1.04) saturate(0.92);
+  transition: filter 1s ease, transform 4s ease;
 }
 
 .article:hover .article-image-wrap img {
-filter: brightness(0.95) contrast(1.04) saturate(0.95);
-transform: scale(1.015);
+  filter: brightness(0.95) contrast(1.04) saturate(0.95);
+  transform: scale(1.015);
 }
 
 .article-meta {
-display: flex;
-gap: 18px;
-margin-bottom: 16px;
-padding: 0 2px;
+  display: flex;
+  gap: 18px;
+  margin-bottom: 16px;
+  padding: 0 2px;
 }
 
 .article-meta span {
-font-family: Georgia, 'Times New Roman', serif;
-font-size: 0.72rem;
-letter-spacing: 0.3em;
-text-transform: uppercase;
-color: #8a7f72;
-font-weight: 400;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #8a7f72;
+  font-weight: 400;
 }
 
 .article-title {
-font-family: Georgia, 'Times New Roman', serif;
-font-weight: 400;
-font-size: clamp(1.55rem, 5vw, 2.1rem);
-line-height: 1.22;
-color: #1f1a16;
-letter-spacing: 0.005em;
-padding: 0 2px;
-max-width: 22ch;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  font-size: clamp(1.55rem, 5vw, 2.1rem);
+  line-height: 1.22;
+  color: #1f1a16;
+  letter-spacing: 0.005em;
+  padding: 0 2px;
+  max-width: 22ch;
 }
 
 .empty-state {
-font-family: Georgia, 'Times New Roman', serif;
-font-size: 1.05rem;
-line-height: 1.7;
-color: #8a7f72;
-padding: 20px 2px 80px;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #8a7f72;
+  padding: 20px 2px 80px;
 }
 
 .site-footer {
-background: #1a1613;
-color: #8a7f72;
-text-align: center;
-padding: 50px 20px;
-font-family: Georgia, 'Times New Roman', serif;
-font-size: 0.78rem;
-letter-spacing: 0.28em;
-text-transform: uppercase;
+  background: #1a1613;
+  color: #8a7f72;
+  text-align: center;
+  padding: 50px 20px;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
 }
 
 @media (min-width: 768px) {
-.site-header {
-padding: 24px 36px;
-}
+  .site-header {
+    padding: 24px 36px;
+  }
 
-.site-logo {
-font-size: 1.15rem;
-}
+  .site-logo {
+    font-size: 1.15rem;
+  }
 
-.hero-image-wrap {
-aspect-ratio: 16 / 9;
-}
+  .hero-image-wrap {
+    aspect-ratio: 16 / 9;
+  }
 
-.hero-text {
-padding: 72px 36px 0;
-display: flex;
-gap: 60px;
-align-items: flex-start;
-}
+  .hero-text {
+    padding: 72px 36px 0;
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+  }
 
-.hero-headline {
-flex: 1;
-margin-bottom: 0;
-font-size: clamp(1.65rem, 2.9vw, 2.35rem);
-}
+  .hero-headline {
+    flex: 1;
+    margin-bottom: 0;
+    font-size: clamp(1.65rem, 2.9vw, 2.35rem);
+  }
 
-.hero-description {
-flex: 0 0 320px;
-padding-top: 12px;
-}
+  .hero-description {
+    flex: 0 0 320px;
+    padding-top: 12px;
+  }
 
-.filters {
-margin-top: 110px;
-}
+  .filters {
+    margin-top: 110px;
+  }
 
-.filter-label {
-padding: 0 36px 0 46px;
-font-size: 0.98rem;
-}
+  .filter-label {
+    padding: 0 36px 0 46px;
+    font-size: 0.98rem;
+  }
 
-.filter-row {
-padding: 4px 36px 18px 0;
-gap: 48px;
-}
+  .filter-row {
+    padding: 4px 36px 18px 0;
+    gap: 48px;
+  }
 
-.filter-row::before {
-content: "";
-flex: 0 0 46px;
-}
+  .filter-row::before {
+    content: "";
+    flex: 0 0 46px;
+  }
 
-.article-feed {
-padding: 110px 36px 120px;
-}
+  .article-feed {
+    padding: 110px 36px 120px;
+  }
 
-.article {
-margin-bottom: 130px;
-}
+  .article {
+    margin-bottom: 130px;
+  }
 
-.article-image-wrap {
-aspect-ratio: 16 / 10;
-}
+  .article-image-wrap {
+    aspect-ratio: 16 / 10;
+  }
 }
 
 @media (min-width: 1100px) {
-.article-feed {
-max-width: 1040px;
-}
+  .article-feed {
+    max-width: 1040px;
+  }
 
-.hero-text {
-max-width: 1040px;
-}
+  .hero-text {
+    max-width: 1040px;
+  }
 
-.hero-headline {
-font-size: 2.55rem;
-}
+  .hero-headline {
+    font-size: 2.55rem;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-html {
-scroll-behavior: auto;
-}
+  html {
+    scroll-behavior: auto;
+  }
 
-.article {
-opacity: 1;
-transform: none;
-transition: none;
-}
+  .article {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 
-.article-image-wrap img {
-transition: none;
-}
+  .article-image-wrap img {
+    transition: none;
+  }
 }
 </style>
 </head>
@@ -397,186 +397,225 @@ transition: none;
 <body>
 
 <header class="site-header">
-<button class="site-logo" id="siteLogo" aria-label="Scroll to top">
-Faraway Postcards
-</button>
+  <button class="site-logo" id="siteLogo" aria-label="Scroll to top">
+    Faraway Postcards
+  </button>
 </header>
 
 <section class="hero">
-<div class="hero-image-wrap">
-<img
-src="images/my-pink-photo.jpg"
-alt="Faraway Postcards — editorial travel photograph"
-loading="eager"
-/>
-</div>
+  <div class="hero-image-wrap">
+    <img
+      src="images/my-pink-photo.jpg"
+      alt="Faraway Postcards — editorial travel photograph"
+      loading="eager"
+    />
+  </div>
 
-<div class="hero-text">
-<h1 class="hero-headline">
-Notes from places that ask you to slow down.
-</h1>
-<p class="hero-description">
-Faraway Postcards is an independent travel journal of long walks,
-quiet harbours, monsoon afternoons and the textures of distant
-coastlines. Stories written slowly, for travellers who prefer
-atmosphere over itinerary.
-</p>
-</div>
+  <div class="hero-text">
+    <h1 class="hero-headline">
+      Notes from places that ask you to slow down.
+    </h1>
+    <p class="hero-description">
+      Faraway Postcards is an independent travel journal of long walks,
+      quiet harbours, monsoon afternoons and the textures of distant
+      coastlines. Stories written slowly, for travellers who prefer
+      atmosphere over itinerary.
+    </p>
+  </div>
 </section>
 
 <section class="filters" aria-label="Browse">
 
-<div class="filter-group">
-<div class="filter-label">Country</div>
-<div class="filter-row" role="list">
-<button class="filter-chip" role="listitem" data-country="Armenia">Armenia</button>
-<button class="filter-chip" role="listitem" data-country="Georgia">Georgia</button>
-<button class="filter-chip" role="listitem" data-country="Indonesia">Indonesia</button>
-<button class="filter-chip" role="listitem" data-country="Kazakhstan">Kazakhstan</button>
-<button class="filter-chip" role="listitem" data-country="Mexico">Mexico</button>
-<button class="filter-chip" role="listitem" data-country="Philippines">Philippines</button>
-<button class="filter-chip" role="listitem" data-country="Vietnam">Vietnam</button>
-<button class="filter-chip" role="listitem" data-country="World">World</button>
-</div>
-</div>
+  <div class="filter-group">
+    <div class="filter-label">Country</div>
+    <div class="filter-row" role="list">
+      <button class="filter-chip" role="listitem" data-country="Armenia">Armenia</button>
+      <button class="filter-chip" role="listitem" data-country="Georgia">Georgia</button>
+      <button class="filter-chip" role="listitem" data-country="Indonesia">Indonesia</button>
+      <button class="filter-chip" role="listitem" data-country="Kazakhstan">Kazakhstan</button>
+      <button class="filter-chip" role="listitem" data-country="Mexico">Mexico</button>
+      <button class="filter-chip" role="listitem" data-country="Philippines">Philippines</button>
+      <button class="filter-chip" role="listitem" data-country="Vietnam">Vietnam</button>
+      <button class="filter-chip" role="listitem" data-country="World">World</button>
+    </div>
+  </div>
 
-<div class="filter-group">
-<div class="filter-label">Experience</div>
-<div class="filter-row" role="list">
-<button class="filter-chip" role="listitem" data-experience="Architecture">Architecture</button>
-<button class="filter-chip" role="listitem" data-experience="Food">Food</button>
-<button class="filter-chip" role="listitem" data-experience="Guidebook">Guidebook</button>
-<button class="filter-chip" role="listitem" data-experience="Nature">Nature</button>
-</div>
-</div>
+  <div class="filter-group">
+    <div class="filter-label">Experience</div>
+    <div class="filter-row" role="list">
+      <button class="filter-chip" role="listitem" data-experience="Architecture">Architecture</button>
+      <button class="filter-chip" role="listitem" data-experience="Food">Food</button>
+      <button class="filter-chip" role="listitem" data-experience="UNESCO">UNESCO</button>
+      <button class="filter-chip" role="listitem" data-experience="Animal Watching">Animal Watching</button>
+      <button class="filter-chip" role="listitem" data-experience="Guidebook">Guidebook</button>
+    </div>
+  </div>
 
 </section>
 
-<main class="article-feed" id="articleFeed"></main>
+<main class="article-feed" id="articleFeed">
+  <!-- Articles are rendered here dynamically by renderArticles() in articles.js -->
+</main>
 
 <footer class="site-footer">
-Faraway Postcards — Editorial Prototype
+  Faraway Postcards — Editorial Prototype
 </footer>
 
-<script src="articles.js"></script>
+<!-- ============================================================
+     FADE-IN OBSERVER  (defined BEFORE articles.js)
+     ============================================================
+     Why this is needed:
+     Article cards are created dynamically by renderArticles() in
+     articles.js. The original IntersectionObserver ran once at
+     page load, when the .article elements did not yet exist, so
+     none of them were ever observed and the fade-in never fired.
 
+     This script:
+       1. Creates a single shared IntersectionObserver.
+       2. Exposes window.observeArticles() so articles.js can call
+          it after every renderArticles() run.
+       3. Sets up a MutationObserver on #articleFeed as a safety
+          net — newly inserted .article elements are observed
+          automatically, so the fade-in works even if articles.js
+          is never modified.
+     ============================================================ -->
 <script>
-(function () {
-'use strict';
+  (function () {
+    'use strict';
 
-const feed = document.getElementById('articleFeed');
-const filterButtons = document.querySelectorAll('.filter-chip');
+    const prefersReducedMotion = window.matchMedia(
+      '(prefers-reduced-motion: reduce)'
+    ).matches;
 
-let activeCountry = null;
-let activeExperience = null;
+    let fadeObserver = null;
 
-  function observeArticles() {
-const articleCards = document.querySelectorAll('.article');
+    if ('IntersectionObserver' in window && !prefersReducedMotion) {
+      fadeObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            fadeObserver.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.15,
+        rootMargin: '0px 0px -60px 0px'
+      });
+    }
 
-if ('IntersectionObserver' in window) {
-const observer = new IntersectionObserver(function (entries) {
-entries.forEach(function (entry) {
-if (entry.isIntersecting) {
-entry.target.classList.add('visible');
-observer.unobserve(entry.target);
-}
-});
-}, {
-threshold: 0.15,
-rootMargin: '0px 0px -60px 0px'
-});
+    /**
+     * Observe .article elements so they fade in on scroll.
+     * Safe to call repeatedly — already-visible elements are skipped.
+     *
+     * @param {NodeList|Array<Element>} [nodes] optional subset to observe
+     */
+    function observeArticles(nodes) {
+      const articles = nodes && nodes.length
+        ? nodes
+        : document.querySelectorAll('.article');
 
-articleCards.forEach(function (article) {
-observer.observe(article);
-});
-} else {
-articleCards.forEach(function (article) {
-article.classList.add('visible');
-});
-}
-}
+      // No IntersectionObserver, or reduced-motion preferred → just show.
+      if (!fadeObserver) {
+        articles.forEach(function (article) {
+          article.classList.add('visible');
+        });
+        return;
+      }
 
-function renderArticles() {
-feed.innerHTML = '';
+      articles.forEach(function (article) {
+        if (article.classList.contains('visible')) return;
+        fadeObserver.observe(article);
+      });
+    }
 
-const filteredArticles = articles.filter(function (article) {
-const countryMatch = !activeCountry || article.country === activeCountry;
-const experienceMatch = !activeExperience || article.experience === activeExperience;
-return countryMatch && experienceMatch;
-});
+    // Expose globally so articles.js can call it after rendering.
+    window.observeArticles = observeArticles;
 
-if (filteredArticles.length === 0) {
-const empty = document.createElement('p');
-empty.className = 'empty-state';
-empty.textContent = 'No articles found for this filter.';
-feed.appendChild(empty);
-return;
-}
+    // ---------- Safety net: watch #articleFeed for new cards ----------
+    function attachMutationObserver() {
+      const feed = document.getElementById('articleFeed');
+      if (!feed) return;
 
-filteredArticles.forEach(function (article) {
-const card = document.createElement('article');
-card.className = 'article visible';
+      const mo = new MutationObserver(function (mutations) {
+        const newArticles = [];
 
-card.innerHTML = `
-<a href="${article.url}">
-<div class="article-image-wrap">
-<img src="${article.image}" alt="${article.title}" loading="lazy">
-</div>
-<div class="article-meta">
-<span>${article.country}</span>
-<span>${article.experience}</span>
-</div>
-<h2 class="article-title">${article.title}</h2>
-</a>
-`;
+        mutations.forEach(function (mutation) {
+          mutation.addedNodes.forEach(function (node) {
+            if (node.nodeType !== 1) return;
+            if (node.classList && node.classList.contains('article')) {
+              newArticles.push(node);
+            } else if (node.querySelectorAll) {
+              const nested = node.querySelectorAll('.article');
+              nested.forEach(function (n) { newArticles.push(n); });
+            }
+          });
+        });
 
-feed.appendChild(card);
-});
-}
+        if (newArticles.length) {
+          observeArticles(newArticles);
+        }
+      });
 
-filterButtons.forEach(function (button) {
-button.addEventListener('click', function () {
-const country = button.dataset.country;
-const experience = button.dataset.experience;
+      mo.observe(feed, { childList: true, subtree: true });
+    }
 
-if (country) {
-activeCountry = activeCountry === country ? null : country;
-}
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', function () {
+        attachMutationObserver();
+        observeArticles();
+      });
+    } else {
+      attachMutationObserver();
+      observeArticles();
+    }
+  })();
+</script>
 
-if (experience) {
-activeExperience = activeExperience === experience ? null : experience;
-}
+<!-- External articles renderer + filtering logic -->
+<script src="articles.js" defer></script>
 
-filterButtons.forEach(function (btn) {
-btn.classList.remove('active');
-});
+<!-- ============================================================
+     PAGE INTERACTIONS  (logo + filter chip active state)
+     ============================================================ -->
+<script>
+  (function () {
+    'use strict';
 
-filterButtons.forEach(function (btn) {
-if (btn.dataset.country && btn.dataset.country === activeCountry) {
-btn.classList.add('active');
-}
+    // Logo scroll-to-top
+    const logo = document.getElementById('siteLogo');
+    if (logo) {
+      logo.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
 
-if (btn.dataset.experience && btn.dataset.experience === activeExperience) {
-btn.classList.add('active');
-}
-});
+    // Filter chip visual active-state (the actual filtering is in articles.js)
+    const filterRows = document.querySelectorAll('.filter-row');
+    filterRows.forEach(function (row) {
+      const chips = row.querySelectorAll('.filter-chip');
+      chips.forEach(function (chip) {
+        chip.addEventListener('click', function () {
+          chips.forEach(function (c) { c.classList.remove('active'); });
+          chip.classList.add('active');
+        });
+      });
+    });
 
-renderArticles();
-});
-});
-
-const logo = document.getElementById('siteLogo');
-if (logo) {
-logo.addEventListener('click', function () {
-window.scrollTo({ top: 0, behavior: 'smooth' });
-});
-}
-
-renderArticles();
-
-  observeArticles();
-
-})();
+    // Re-trigger the fade-in observer after every filter click,
+    // in case articles.js re-renders the feed. The MutationObserver
+    // above already handles this, but this is an extra guarantee.
+    document.querySelectorAll('.filter-chip').forEach(function (chip) {
+      chip.addEventListener('click', function () {
+        requestAnimationFrame(function () {
+          requestAnimationFrame(function () {
+            if (typeof window.observeArticles === 'function') {
+              window.observeArticles();
+            }
+          });
+        });
+      });
+    });
+  })();
 </script>
 
 </body>
