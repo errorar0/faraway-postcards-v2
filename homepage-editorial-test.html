@@ -280,6 +280,14 @@ padding: 0 2px;
 max-width: 22ch;
 }
 
+.empty-state {
+font-family: Georgia, 'Times New Roman', serif;
+font-size: 1.05rem;
+line-height: 1.7;
+color: #8a7f72;
+padding: 20px 2px 80px;
+}
+
 .site-footer {
 background: #1a1613;
 color: #8a7f72;
@@ -421,126 +429,115 @@ atmosphere over itinerary.
 <div class="filter-group">
 <div class="filter-label">Country</div>
 <div class="filter-row" role="list">
-<button class="filter-chip" role="listitem">Armenia</button>
-<button class="filter-chip" role="listitem">Georgia</button>
-<button class="filter-chip" role="listitem">Nepal</button>
-<button class="filter-chip" role="listitem">Kazakhstan</button>
-<button class="filter-chip" role="listitem">Indonesia</button>
-<button class="filter-chip" role="listitem">Vietnam</button>
-<button class="filter-chip" role="listitem">Thailand</button>
-<button class="filter-chip" role="listitem">Philippines</button>
+<button class="filter-chip" role="listitem" data-country="Armenia">Armenia</button>
+<button class="filter-chip" role="listitem" data-country="Georgia">Georgia</button>
+<button class="filter-chip" role="listitem" data-country="Indonesia">Indonesia</button>
+<button class="filter-chip" role="listitem" data-country="Kazakhstan">Kazakhstan</button>
+<button class="filter-chip" role="listitem" data-country="Mexico">Mexico</button>
+<button class="filter-chip" role="listitem" data-country="Philippines">Philippines</button>
+<button class="filter-chip" role="listitem" data-country="Vietnam">Vietnam</button>
+<button class="filter-chip" role="listitem" data-country="World">World</button>
 </div>
 </div>
 
 <div class="filter-group">
 <div class="filter-label">Experience</div>
 <div class="filter-row" role="list">
-<button class="filter-chip" role="listitem">UNESCO</button>
-<button class="filter-chip" role="listitem">Architecture</button>
-<button class="filter-chip" role="listitem">Food</button>
-<button class="filter-chip" role="listitem">Animal Watching</button>
-<button class="filter-chip" role="listitem">Guidebook</button>
+<button class="filter-chip" role="listitem" data-experience="Architecture">Architecture</button>
+<button class="filter-chip" role="listitem" data-experience="Food">Food</button>
+<button class="filter-chip" role="listitem" data-experience="Guidebook">Guidebook</button>
+<button class="filter-chip" role="listitem" data-experience="Nature">Nature</button>
 </div>
 </div>
 
 </section>
 
-<main class="article-feed">
-
-<article class="article">
-<div class="article-image-wrap">
-<img
-src="https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=1400&q=80"
-alt="Limestone cliffs over still water"
-loading="lazy"
-/>
-</div>
-<div class="article-meta">
-<span>Thailand</span>
-<span>Guidebook</span>
-</div>
-<h2 class="article-title">
-Two weeks in southern Thailand, from rainforest to coast.
-</h2>
-</article>
-
-<article class="article">
-<div class="article-image-wrap">
-<img
-src="https://images.unsplash.com/photo-1543158266-0066955047b0?auto=format&fit=crop&w=1400&q=80"
-alt="Mountain monastery at dusk"
-loading="lazy"
-/>
-</div>
-<div class="article-meta">
-<span>Armenia</span>
-<span>UNESCO</span>
-</div>
-<h2 class="article-title">
-Old stone, cold wind, and the quiet roads of Lori.
-</h2>
-</article>
-
-<article class="article">
-<div class="article-image-wrap">
-<img
-src="https://images.unsplash.com/photo-1605640840605-14ac1855827b?auto=format&fit=crop&w=1400&q=80"
-alt="Rice terraces in mist"
-loading="lazy"
-/>
-</div>
-<div class="article-meta">
-<span>Indonesia</span>
-<span>Architecture</span>
-</div>
-<h2 class="article-title">
-Slow mornings in the highland villages of Bali.
-</h2>
-</article>
-
-<article class="article">
-<div class="article-image-wrap">
-<img
-src="https://images.unsplash.com/photo-1504457047772-27faf1c00561?auto=format&fit=crop&w=1400&q=80"
-alt="Himalayan valley"
-loading="lazy"
-/>
-</div>
-<div class="article-meta">
-<span>Nepal</span>
-<span>Animal Watching</span>
-</div>
-<h2 class="article-title">
-Walking the lower valleys before the snow returns.
-</h2>
-</article>
-
-<article class="article">
-<div class="article-image-wrap">
-<img
-src="https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1400&q=80"
-alt="Coastal village at dusk"
-loading="lazy"
-/>
-</div>
-<div class="article-meta">
-<span>Vietnam</span>
-<span>Food</span>
-</div>
-<h2 class="article-title">
-A long lunch in a fishing village south of Hoi An.
-</h2>
-</article>
-
-</main>
+<main class="article-feed" id="articleFeed"></main>
 
 <footer class="site-footer">
 Faraway Postcards — Editorial Prototype
 </footer>
 
+<script src="articles.js"></script>
+
 <script>
 (function () {
 'use strict';
+
+const feed = document.getElementById('articleFeed');
+const filterButtons = document.querySelectorAll('.filter-chip');
+
+let activeCountry = null;
+let activeExperience = null;
+
+function renderArticles() {
+feed.innerHTML = '';
+
+const filteredArticles = articles.filter(function (article) {
+const countryMatch = !activeCountry || article.country === activeCountry;
+const experienceMatch = !activeExperience || article.experience === activeExperience;
+return countryMatch && experienceMatch;
+});
+
+if (filteredArticles.length === 0) {
+const empty = document.createElement('p');
+empty.className = 'empty-state';
+empty.textContent = 'No articles found for this filter.';
+feed.appendChild(empty);
+return;
+}
+
+filteredArticles.forEach(function (article) {
+const card = document.createElement('article');
+card.className = 'article visible';
+
+card.innerHTML = `
+<a href="${article.url}">
+<div class="article-image-wrap">
+<img src="${article.image}" alt="${article.title}" loading="lazy">
+</div>
+<div class="article-meta">
+<span>${article.country}</span>
+<span>${article.experience}</span>
+</div>
+<h2 class="article-title">${article.title}</h2>
+</a>
+`;
+
+feed.appendChild(card);
+});
+}
+
+filterButtons.forEach(function (button) {
+button.addEventListener('click', function () {
+const country = button.dataset.country;
+const experience = button.dataset.experience;
+
+if (country) {
+activeCountry = activeCountry === country ? null : country;
+}
+
+if (experience) {
+activeExperience = activeExperience === experience ? null : experience;
+}
+
+filterButtons.forEach(function (btn) {
+btn.classList.remove('active');
+});
+
+filterButtons.forEach(function (btn) {
+if (btn.dataset.country && btn.dataset.country === activeCountry) {
+btn.classList.add('active');
+}
+
+if (btn.dataset.experience && btn.dataset.experience === activeExperience) {
+btn.classList.add('active');
+}
+});
+
+renderArticles();
+});
+});
 
 const logo = document.getElementById('siteLogo');
 if (logo) {
@@ -549,43 +546,10 @@ window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 }
 
-const filterRows = document.querySelectorAll('.filter-row');
-filterRows.forEach(function (row) {
-const chips = row.querySelectorAll('.filter-chip');
-chips.forEach(function (chip) {
-chip.addEventListener('click', function () {
-chips.forEach(function (c) { c.classList.remove('active'); });
-chip.classList.add('active');
-});
-});
-});
+renderArticles();
 
-const articles = document.querySelectorAll('.article');
-
-if ('IntersectionObserver' in window) {
-const observer = new IntersectionObserver(function (entries) {
-entries.forEach(function (entry) {
-if (entry.isIntersecting) {
-entry.target.classList.add('visible');
-observer.unobserve(entry.target);
-}
-});
-}, {
-threshold: 0.15,
-rootMargin: '0px 0px -60px 0px'
-});
-
-articles.forEach(function (article) {
-observer.observe(article);
-});
-} else {
-articles.forEach(function (article) {
-article.classList.add('visible');
-});
-}
 })();
 </script>
 
 </body>
 </html>
-
