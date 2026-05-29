@@ -31,6 +31,13 @@ const articles = [
   tags: ["UNESCO"],
   url: "articles/untouched-laos-unesco-sites-and-most-beautiful-places.html"
 },
+  {
+  title: "The Indian City That Quietly Changes Everything You Expect From India",
+  image: "images/indore-india-hero.jpeg",
+  country: "India",
+  experience: "Guidebook",
+  url: "articles/the-indian-city-that-quietly-changes-everything-you-expect-from-india.html"
+},
   
   {
   title: "Kaziranga National Park: The Wild Heart of Assam",
