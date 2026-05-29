@@ -15,6 +15,15 @@ const articles = [
     url: "articles/pokhara-the-city-where-the-himalayas-reflect-in-water.html"
   },
 
+{
+  title: "Untouched Laos: UNESCO Sites and the Most Beautiful Places for a 3-Week Journey",
+  image: "images/laos-untouched-journey-hero.jpeg",
+  country: "Laos",
+  experience: "Guidebook",
+  tags: ["UNESCO"],
+  url: "articles/untouched-laos-3-week-itinerary.html"
+},
+  
   {
     title: "Routes Through Georgia for the Feeling of Infinity",
     image: "images/georgia-infinity-mountain-road-hero.jpeg",
