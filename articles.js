@@ -75,7 +75,7 @@ const articles = [
     title: "The Mood of Patan Across the Year",
     image: "images/patan-mood-through-the-year.jpeg",
     country: "Nepal",
-    experience: "Guidebook",
+    experience: "Best Time to Visit",
     url: "articles/the-mood-of-patan-across-the-year.html"
   },
 
@@ -129,7 +129,7 @@ const articles = [
     title: "Tea Mountains, Canal Cities and Sea of Clouds: Eastern China by Rail",
     image: "images/china-eastern-hero.jpeg",
     country: "China",
-    experience: "Rail Journey",
+    experience: "Guidebook",
     url: "articles/eastern-china-by-rail.html"
 },
   {
