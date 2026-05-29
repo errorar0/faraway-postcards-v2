@@ -23,7 +23,14 @@ const articles = [
   tags: ["UNESCO"],
   url: "articles/untouched-laos-unesco-sites-and-most-beautiful-places.html"
 },
-  
+  {
+title: “Kaziranga National Park: The Wild Heart of Assam”,
+image: “images/india-kaziranga-national-park-assam.jpg”,
+country: “India”,
+experience: “Wildlife”,
+tags: [“UNESCO”],
+url: “articles/kaziranga-national-park-the-wild-heart-of-assam.html”
+},
   {
     title: "Routes Through Georgia for the Feeling of Infinity",
     image: "images/georgia-infinity-mountain-road-hero.jpeg",
