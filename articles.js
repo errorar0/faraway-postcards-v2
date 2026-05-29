@@ -20,6 +20,7 @@ const articles = [
   image: "images/laos-untouched-journey-hero.jpeg",
   country: "Laos",
   experience: "Guidebook",
+  tags: ["UNESCO"],
   url: "articles/untouched-laos-unesco-sites-and-most-beautiful-places.html"
 },
   
