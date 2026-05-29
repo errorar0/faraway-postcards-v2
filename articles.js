@@ -95,7 +95,13 @@ const articles = [
     experience: "Guidebook",
     url: "articles/locations-in-mexico-that-feel-too-surreal-to-be-real.html"
   },
-
+{
+  title: "Wonderful Birdwatching Vacations Around the World",
+  image: "images/birdwatching-world-vacation-hero.jpeg",
+  country: "World",
+  experience: "Wildlife",
+  url: "articles/wonderful-birdwatching-vacations-around-the-world.html"
+},
   {
     title: "Where Georgia Feels Endless",
     image: "images/georgia-where-georgia-feels-endless.jpg",
