@@ -54,7 +54,14 @@ url: “articles/pokhara-the-city-where-the-himalayas-reflect-in-water.html”
   experience: "Architecture",
   url: "articles/slow-travel-in-nepal-among-golden-temples-and-old-brick-streets.html"
 },
-  
+  {
+title: “Routes Through Georgia for the Feeling of Infinity”,
+image: “images/georgia-infinity-mountain-road-hero.jpeg”,
+country: “Georgia”,
+experience: “Road Trips”,
+url: “articles/routes-through-georgia-for-the-feeling-of-infinity.html”
+},
+
 {
   title: "How France Changed the Taste of Vietnam",
   url: "articles/how-france-changed-the-taste-of-vietnam.html",
