@@ -126,6 +126,13 @@ const articles = [
   url: "articles/wonderful-birdwatching-vacations-around-the-world.html"
 },
   {
+    title: "Tea Mountains, Canal Cities and Sea of Clouds: Eastern China by Rail",
+    image: "images/china-eastern-hero.jpeg",
+    country: "China",
+    experience: "Rail Journey",
+    url: "articles/eastern-china-by-rail.html"
+},
+  {
     title: "Where Georgia Feels Endless",
     image: "images/georgia-where-georgia-feels-endless.jpg",
     country: "Georgia",
