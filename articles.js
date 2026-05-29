@@ -128,6 +128,14 @@ const articles = [
   },
 
   {
+  title: "Best Time to Visit Laos",
+  image: "images/laos-best-time-hero.jpeg",
+  country: "Laos",
+  experience: "Best Time to Visit",
+  url: "articles/best-time-to-visit-laos.html"
+},
+
+  {
     title: "The Volcanic Architecture of Armenia",
     image: "images/yerevan_armenia.jpeg",
     country: "Armenia",
