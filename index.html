@@ -830,7 +830,7 @@ feed.innerHTML = '';
 
 const filteredArticles = articles.filter(function (article) {
 const countryMatch = !activeCountry || article.country === activeCountry;
-const experienceMatch = !activeExperience || article.experience === activeExperience;
+const experienceMatch = !activeExperience || article.experience === activeExperience || (article.tags && article.tags.includes(activeExperience));
 return countryMatch && experienceMatch;
 });
 
