@@ -14,7 +14,15 @@ const articles = [
     experience: "Guidebook",
     url: "articles/pokhara-the-city-where-the-himalayas-reflect-in-water.html"
   },
-
+  
+{
+  title: "San Pedro de Atacama: A Place That Changes Your Itinerary",
+  image: "images/chile-san-pedro-route.jpg",
+  country: "Chile",
+  experience: "Guidebook",
+  url: "articles/san-pedro-de-atacama-place-that-changes-your-itinerary.html"
+},
+  
 {
   title: "Untouched Laos: UNESCO Sites and the Most Beautiful Places for a 3-Week Journey",
   image: "images/laos-untouched-journey-hero.jpeg",
