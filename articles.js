@@ -7,6 +7,14 @@ const articles = [
   experience: "Guidebook",
   url: "articles/the-most-atmospheric-places-in-monaco-in-the-early-morning.html"
 },
+
+  {
+title: “Pokhara: The City Where the Himalayas Reflect in Water”,
+image: “images/pokhara-himalayas-hero.jpeg”,
+country: “Nepal”,
+experience: “Guidebook”,
+url: “articles/pokhara-the-city-where-the-himalayas-reflect-in-water.html”
+},
   
   {
   title: "Quiet Thailand: Two Weeks Among Birds, Lakes, Jungles, and Sea Air",
