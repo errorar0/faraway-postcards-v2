@@ -117,7 +117,13 @@ const articles = [
     experience: "Guidebook",
     url: "articles/philippines-boats-stop-running.html"
   },
-
+{
+    title: "Jakarta in 7 Days: An Active Late-July Guide to Indonesia’s Capital",
+    image: "images/jakarta-7-days-city-center-hero.jpeg",
+    country: "Indonesia",
+    experience: "Guidebook",
+    url: "articles/jakarta-in-7-days-active-late-july-guide.html"
+},
   {
     title: "The Geography of Flavor in Vietnam",
     image: "images/vietnam/vietnam-geography-of-flavor-hero.jpeg",
