@@ -84,7 +84,7 @@ const articles = [
     image: "images/amazing-desserts-around-the-world.jpeg",
     country: "World",
     experience: "Food",
-    url: "articles/amazing-desserts-around-the-world.html"
+    url: "articles-v3/amazing-desserts-around-the-world.html"
   },
 
   {
