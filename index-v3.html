@@ -1,14 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Faraway Postcards — Version 3</title>
-  <link rel="stylesheet" href="styles-v3.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Faraway Postcards</title>
+<link rel="stylesheet" href="styles-v3.css">
 </head>
+
 <body>
 
-  <h1>Version 3 works</h1>
+<header class="site-header">
+  <div class="logo">Faraway <span>Postcards</span></div>
+  <nav>
+    <a href="index-v3.html">Home</a>
+    <a href="articles.html">Articles</a>
+    <a href="about.html">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <h1>Stories Worth Traveling For</h1>
+    <p>Atmospheric places, unusual routes, food culture, wild landscapes, and journeys that feel different.</p>
+    <a href="#latest" class="button">Start Exploring</a>
+  </div>
+</section>
+
+<section class="categories">
+  <h2>Browse by Category</h2>
+  <p>Find stories by mood, region, and way of traveling.</p>
+  <div class="category-list">
+    <span>Guidebook</span>
+    <span>Food</span>
+    <span>Wildlife</span>
+    <span>Architecture</span>
+    <span>Best Time to Visit</span>
+    <span>Nature</span>
+    <span>UNESCO</span>
+  </div>
+</section>
+
+<section class="featured">
+  <h2>Featured Story</h2>
+  <p>The places that feel most alive before the world fully arrives.</p>
+  <a href="articles/the-most-atmospheric-places-in-monaco-in-the-early-morning.html" class="button">Read the Featured Story</a>
+</section>
+
+<section class="latest" id="latest">
+  <h2>Latest Articles</h2>
+  <p>Fresh guides, essays, and travel notes from the road.</p>
+
+  <div class="article-grid" id="articleGrid"></div>
+</section>
+
+<section class="ads">
+  <div class="ad-card">Trip.com<br><small>Hotels, flights, trains & travel deals</small></div>
+  <div class="ad-card">Travel Gear<br><small>Buy now and pay later</small></div>
+  <div class="ad-card small">Klook<br><small>Activities & city passes</small></div>
+</section>
+
+<section class="newsletter">
+  <h2>Join the Journey</h2>
+  <p>Get atmospheric travel stories and new destination ideas.</p>
+  <form>
+    <input type="email" placeholder="Your email address">
+    <button type="submit">Subscribe</button>
+  </form>
+</section>
+
+<footer class="footer" id="contact">
+  <div>
+    <h3>Explore</h3>
+    <a href="index-v3.html">Home</a>
+    <a href="articles.html">Articles</a>
+    <a href="about.html">About</a>
+  </div>
+
+  <div>
+    <h3>Categories</h3>
+    <a href="#">Guidebook</a>
+    <a href="#">Food</a>
+    <a href="#">Wildlife</a>
+    <a href="#">Architecture</a>
+  </div>
+
+  <div>
+    <h3>Connect</h3>
+    <a href="#">Instagram</a>
+    <a href="#">Pinterest</a>
+    <a href="#">YouTube</a>
+  </div>
+
+  <div>
+    <h3>Faraway Postcards</h3>
+    <p>An independent travel journal about places that feel different.</p>
+  </div>
+</footer>
+
+<div class="copyright">
+  © 2026 Faraway Postcards. All rights reserved.
+</div>
+
+<script src="articles.js"></script>
+<script>
+const grid = document.getElementById("articleGrid");
+
+articles.slice(0, 12).forEach(article => {
+  const card = document.createElement("a");
+  card.className = "article-card";
+  card.href = article.url;
+
+  card.innerHTML = `
+    <img src="${article.image}" alt="${article.title}">
+    <div class="article-content">
+      <span class="tag">${article.experience}</span>
+      <h3>${article.title}</h3>
+      <p>${article.country} · A Faraway Postcards travel story.</p>
+      <div class="read-more">Read more →</div>
+    </div>
+  `;
+
+  grid.appendChild(card);
+});
+</script>
 
 </body>
 </html>
