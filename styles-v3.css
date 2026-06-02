@@ -45,6 +45,20 @@ a {
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
+.site-header nav a {
+  position: relative;
+  padding-bottom: 6px;
+}
+
+.site-header nav a.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: #d8942f;
+}
 
 .hero {
   width: 100%;
