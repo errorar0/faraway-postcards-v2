@@ -111,6 +111,9 @@ a {
   font-size: 18px;
   color: #6a675e;
 }
+.latest > p {
+  margin-bottom: 60px;
+}
 
 .category-list {
   width: 100%;
