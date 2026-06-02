@@ -28,7 +28,7 @@ a {
 }
 
 .logo {
-  font-size: 18px;
+  font-size: 24px;
   font-weight: bold;
   color: #183f3b;
 }
@@ -99,8 +99,8 @@ a {
 .featured h2,
 .latest h2,
 .newsletter h2 {
-  margin: 0 0 8px;
-  font-size: 25px;
+  margin: 0 0 22px;
+  font-size: 34px;
 }
 
 .categories p,
