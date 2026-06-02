@@ -49,17 +49,13 @@ a {
 .hero {
   width: 100%;
   min-height: 720px;
-  background:
-    linear-gradient(135deg, rgba(9, 54, 50, 0.96), rgba(22, 83, 70, 0.8), rgba(190, 134, 43, 0.75)),
-    url("images/china-eastern-hero.jpeg");
-  background-size: cover;
-  background-position: center;
+  background: linear-gradient(135deg, #103f3d 0%, #173f3a 45%, #8c7a36 100%);
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   color: #fff8eb;
-  padding: 90px 20px;
+  padding: 120px 20px 90px;
 }
 
 .hero-inner {
@@ -83,10 +79,10 @@ a {
   display: inline-block;
   background: #d8942f;
   color: #fff;
-  padding: 12px 24px;
+  padding: 18px 38px;
   border-radius: 999px;
   font-family: Arial, sans-serif;
-  font-size: 11px;
+  font-size: 15px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
@@ -94,7 +90,7 @@ a {
 .categories {
   width: 100%;
   text-align: center;
-  padding: 38px 20px 36px;
+  padding: 120px 20px 110px;
   background: #fbf7ef;
 }
 
@@ -145,7 +141,7 @@ a {
   background: #103f3d;
   color: #fff6e8;
   text-align: center;
-  padding: 42px 20px;
+  padding: 110px 20px 120px;
 }
 
 .featured p {
@@ -345,20 +341,20 @@ a {
   }
 
   .hero {
-    min-height: 300px;
-    padding: 54px 20px;
+    min-height: 620px;
+    padding: 90px 20px 70px;
   }
 
   .hero h1 {
-    font-size: 34px;
+    font-size: 42px;
   }
 
   .categories {
-    padding: 36px 20px 34px;
+    padding: 90px 20px 80px;
   }
 
   .featured {
-    padding: 40px 20px;
+    padding: 90px 20px 100px;
   }
 
   .article-grid {
