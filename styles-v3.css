@@ -350,3 +350,39 @@ a {
     flex-direction: column;
   }
 }
+.hero-inner,
+.categories > h2,
+.categories > p,
+.category-list,
+.featured > h2,
+.featured > p,
+.latest > h2,
+.latest > p,
+.newsletter > h2,
+.newsletter > p,
+.newsletter form {
+  max-width: 620px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.categories,
+.featured,
+.newsletter {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.category-list span {
+  cursor: pointer;
+}
+
+.category-list span:hover {
+  background: #d8942f;
+  color: #fff;
+}
+
+.category-list span.active {
+  background: #d8942f;
+  color: #fff;
+}
