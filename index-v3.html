@@ -30,14 +30,15 @@
   <h2>Browse by Category</h2>
   <p>Find stories by mood, region, and way of traveling.</p>
   <div class="category-list">
-    <span>Guidebook</span>
-    <span>Food</span>
-    <span>Wildlife</span>
-    <span>Architecture</span>
-    <span>Best Time to Visit</span>
-    <span>Nature</span>
-    <span>UNESCO</span>
-  </div>
+  <span class="active" data-filter="All">All</span>
+  <span data-filter="Guidebook">Guidebook</span>
+  <span data-filter="Food">Food</span>
+  <span data-filter="Wildlife">Wildlife</span>
+  <span data-filter="Architecture">Architecture</span>
+  <span data-filter="Best Time to Visit">Best Time to Visit</span>
+  <span data-filter="Nature">Nature</span>
+  <span data-filter="UNESCO">UNESCO</span>
+</div>
 </section>
 
 <section class="featured">
@@ -112,19 +113,47 @@ navLinks.forEach(link => {
     link.classList.add("active");
   });
 });
-articles.slice(0, 12).forEach(article => {
-  const card = document.createElement("a");
-  card.className = "article-card";
-  card.href = article.url;
+function renderArticles(filter = "All") {
+  grid.innerHTML = "";
 
-  card.innerHTML = `
-    <img src="${article.image}" alt="${article.title}">
-    <div class="article-content">
-      <span class="tag">${article.experience}</span>
-      <h3>${article.title}</h3>
-      <div class="read-more">Read more →</div>
-    </div>
-  `;
+  const filteredArticles = articles.filter(article => {
+    if (filter === "All") return true;
+    if (article.experience === filter) return true;
+    if (article.tags && article.tags.includes(filter)) return true;
+    return false;
+  }).slice(0, 12);
+
+  filteredArticles.forEach(article => {
+    const card = document.createElement("a");
+    card.className = "article-card";
+    card.href = article.url;
+
+    card.innerHTML = `
+      <img src="${article.image}" alt="${article.title}">
+      <div class="article-content">
+        <span class="tag">${article.experience}</span>
+        <h3>${article.title}</h3>
+        <div class="read-more">Read more →</div>
+      </div>
+    `;
+
+    grid.appendChild(card);
+  });
+}
+
+document.querySelectorAll(".category-list span").forEach(button => {
+  button.addEventListener("click", () => {
+    document.querySelectorAll(".category-list span").forEach(item => {
+      item.classList.remove("active");
+    });
+
+    button.classList.add("active");
+    renderArticles(button.dataset.filter);
+    document.getElementById("latest").scrollIntoView({ behavior: "smooth" });
+  });
+});
+
+renderArticles();
 
   grid.appendChild(card);
 });
