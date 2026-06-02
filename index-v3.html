@@ -104,7 +104,14 @@
 <script src="articles.js"></script>
 <script>
 const grid = document.getElementById("articleGrid");
+const navLinks = document.querySelectorAll(".site-header nav a");
 
+navLinks.forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.forEach(item => item.classList.remove("active"));
+    link.classList.add("active");
+  });
+});
 articles.slice(0, 12).forEach(article => {
   const card = document.createElement("a");
   card.className = "article-card";
