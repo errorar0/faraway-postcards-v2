@@ -120,7 +120,7 @@ function renderArticles(filter = "All") {
     if (article.experience === filter) return true;
     if (article.tags && article.tags.includes(filter)) return true;
     return false;
-  }).slice(0, 12);
+});
 
   filteredArticles.forEach(article => {
     const card = document.createElement("a");
