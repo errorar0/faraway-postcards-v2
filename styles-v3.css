@@ -439,9 +439,7 @@ a {
   color: #252525;
   margin: 0 0 22px;
 }
-.v3-article figure + p {
-  margin-top: 22px;
-}
+
 .v3-article h2 {
   font-size: 28px;
   line-height: 1.25;
@@ -450,12 +448,13 @@ a {
 }
 
 .v3-article figure {
-  margin: 40px 0 34px;
+  margin: 40px 0 0;
 }
 
 .v3-article img {
   width: 100%;
   display: block;
+  margin-bottom: 22px;
 }
 
 @media (max-width: 700px) {
