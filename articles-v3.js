@@ -137,13 +137,13 @@ const articles = [
     url: "articles-v3/eastern-china-by-rail.html"
   },
 
-  {
-    title: "Where Georgia Feels Endless",
-    image: "images/georgia-where-georgia-feels-endless.jpg",
-    country: "Georgia",
-    experience: "Guidebook",
-    url: "articles/where-georgia-feels-endless.html"
-  },
+{
+  title: "Where Georgia Feels Endless",
+  image: "images/georgia-where-georgia-feels-endless.jpg",
+  country: "Georgia",
+  experience: "Guidebook",
+  url: "articles-v3/where-georgia-feels-endless.html"
+},
 
   {
     title: "The Weeks When Boats Stop Running",
