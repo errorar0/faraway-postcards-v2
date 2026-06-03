@@ -139,13 +139,13 @@ const articles = [
     url: "articles/where-georgia-feels-endless.html"
   },
 
-  {
-    title: "The Weeks When Boats Stop Running",
-    image: "images/philippines-boats-stop-running-cover.jpeg",
-    country: "Philippines",
-    experience: "Guidebook",
-    url: "articles/philippines-boats-stop-running.html"
-  },
+{
+  title: "The Weeks When Boats Stop Running",
+  image: "images/philippines-boats-stop-running-cover.jpeg",
+  country: "Philippines",
+  experience: "Guidebook",
+  url: "articles-v3/the-weeks-when-boats-stop-running.html"
+},
 {
   title: "Jakarta in 7 Days: An Active Late-July Guide to Indonesia’s Capital",
   image: "images/jakarta-7-days-city-center-hero.jpeg",
