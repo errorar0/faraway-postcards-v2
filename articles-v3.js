@@ -8,12 +8,12 @@ const articles = [
   },
 
   {
-    title: "Pokhara: The City Where the Himalayas Reflect in Water",
-    image: "images/pokhara-himalayas-hero.jpeg",
-    country: "Nepal",
-    experience: "Guidebook",
-    url: "articles/pokhara-the-city-where-the-himalayas-reflect-in-water.html"
-  },
+  title: "Pokhara: The City Where the Himalayas Reflect in Water",
+  image: "images/pokhara-himalayas-hero.jpeg",
+  country: "Nepal",
+  experience: "Guidebook",
+  url: "articles-v3/pokhara-the-city-where-the-himalayas-reflect-in-water.html"
+},
   
 {
   title: "San Pedro de Atacama: A Place That Changes Your Itinerary",
