@@ -183,7 +183,7 @@ const articles = [
   image: "images/laos-best-time-hero.jpeg",
   country: "Laos",
   experience: "Best Time to Visit",
-  url: "articles/best-time-to-visit-laos.html"
+  url: "articles-v3/best-time-to-visit-laos.html"
 },
 
   {
