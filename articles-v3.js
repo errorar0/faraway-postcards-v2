@@ -39,13 +39,13 @@ const articles = [
   url: "articles/the-indian-city-that-quietly-changes-everything-you-expect-from-india.html"
 },
   
-  {
+ {
   title: "Kaziranga National Park: The Wild Heart of Assam",
   image: "images/india-kaziranga-national-park-assam.jpg",
   country: "India",
   experience: "Wildlife",
   tags: ["UNESCO"],
-  url: "articles/kaziranga-national-park-the-wild-heart-of-assam.html"
+  url: "articles-v3/kaziranga-national-park-the-wild-heart-of-assam.html"
 },
   {
     title: "Routes Through Georgia for the Feeling of Infinity",
