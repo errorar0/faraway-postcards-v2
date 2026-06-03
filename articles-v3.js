@@ -200,10 +200,10 @@ const articles = [
   url: "articles-v3/eastern-china-by-rail.html"
 },
   {
-    title: "Places That Work Better as Photographs Than Real Experiences",
-    image: "images/but-hero.jpeg",
-    country: "World",
-    experience: "Guidebook",
-    url: "articles/places-that-work-better-as-photographs.html"
-  }
+  title: "Places That Work Better as Photographs Than Real Experiences",
+  image: "images/but-hero.jpeg",
+  country: "World",
+  experience: "Guidebook",
+  url: "articles-v3/places-that-work-better-as-photographs.html"
+},
 ];
