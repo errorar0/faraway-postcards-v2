@@ -445,20 +445,20 @@ a {
 }
 
 .v3-article {
-  max-width: 980px;
+  max-width: 880px;
   margin: 0 auto;
-  padding: 70px 40px 100px;
+  padding: 40px 32px 80px;
 }
 
 .v3-article p {
   font-family: Arial, sans-serif;
-  font-size: 21px;
+  font-size: 18px;
   line-height: 1.75;
   color: #262626;
 }
 
 .v3-article h2 {
-  font-size: 38px;
+  font-size: 30px;
   line-height: 1.2;
   margin-top: 70px;
   color: #123c3a;
