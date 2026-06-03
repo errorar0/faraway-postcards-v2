@@ -100,7 +100,7 @@ const articles = [
     image: "images/Vietnam-taste-french-hero.jpeg",
     country: "Vietnam",
     experience: "Food",
-    url: "articles/how-france-changed-the-taste-of-vietnam.html"
+    url: "articles-v3/how-france-changed-the-taste-of-vietnam.html"
   },
 
   {
