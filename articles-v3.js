@@ -55,13 +55,13 @@ const articles = [
     url: "articles/routes-through-georgia-for-the-feeling-of-infinity.html"
   },
 
-  {
-    title: "Quiet Thailand: Two Weeks Among Birds, Lakes, Jungles, and Sea Air",
-    image: "images/thailand-birdwatching-slow-travel.jpeg",
-    country: "Thailand",
-    experience: "Wildlife",
-    url: "articles/quiet-thailand-two-weeks-among-birds-lakes-jungles-and-sea-air.html"
-  },
+ {
+  title: "Quiet Thailand: Two Weeks Among Birds, Lakes, Jungles, and Sea Air",
+  image: "images/thailand-birdwatching-slow-travel.jpeg",
+  country: "Thailand",
+  experience: "Wildlife",
+  url: "articles-v3/quiet-thailand-two-weeks-among-birds-lakes-jungles-and-sea-air.html"
+},
 
   {
     title: "Traditional Lao Desserts Worth Trying Before They Disappear",
