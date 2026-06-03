@@ -110,13 +110,13 @@ const articles = [
   experience: "Guidebook",
   url: "articles-v3/kazakhstan-that-feels-like-another-planet.html"
 },
-  {
-    title: "Locations in Mexico That Feel Too Surreal to Be Real",
-    image: "images/mexico-surreal-cover.jpeg",
-    country: "Mexico",
-    experience: "Guidebook",
-    url: "articles/locations-in-mexico-that-feel-too-surreal-to-be-real.html"
-  },
+ {
+  title: "Locations in Mexico That Feel Too Surreal to Be Real",
+  image: "images/mexico-surreal-cover.jpeg",
+  country: "Mexico",
+  experience: "Guidebook",
+  url: "articles-v3/locations-in-mexico-that-feel-too-surreal-to-be-real.html"
+},
 {
   title: "Wonderful Birdwatching Vacations Around the World",
   image: "images/birdwatching-world-vacation-hero.jpeg",
