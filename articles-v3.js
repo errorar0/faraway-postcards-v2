@@ -104,13 +104,12 @@ const articles = [
   },
 
   {
-    title: "Kazakhstan That Feels Like Another Planet",
-    image: "images/kazakhstan-hero.jpeg",
-    country: "Kazakhstan",
-    experience: "Guidebook",
-    url: "articles/kazakhstan-that-feels-like-another-planet.html"
-  },
-
+  title: "Kazakhstan That Feels Like Another Planet",
+  image: "images/kazakhstan-hero.jpeg",
+  country: "Kazakhstan",
+  experience: "Guidebook",
+  url: "articles-v3/kazakhstan-that-feels-like-another-planet.html"
+},
   {
     title: "Locations in Mexico That Feel Too Surreal to Be Real",
     image: "images/mexico-surreal-cover.jpeg",
