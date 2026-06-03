@@ -92,7 +92,7 @@ const articles = [
     image: "images/nepal-patan-slow-travel-hero.jpeg",
     country: "Nepal",
     experience: "Architecture",
-    url: "articles/slow-travel-in-nepal-among-golden-temples-and-old-brick-streets.html"
+    url: "articles-v3/slow-travel-in-nepal-among-golden-temples-and-old-brick-streets.html"
   },
 
   {
