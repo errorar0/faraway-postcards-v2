@@ -193,7 +193,13 @@ const articles = [
     experience: "Architecture",
     url: "articles/the-volcanic-architecture-of-armenia.html"
   },
-
+{
+  title: "Tea Mountains, Canal Cities and Sea of Clouds: Eastern China by Rail",
+  image: "images/china-eastern-hero.jpeg",
+  country: "China",
+  experience: "Guidebook",
+  url: "articles-v3/eastern-china-by-rail.html"
+},
   {
     title: "Places That Work Better as Photographs Than Real Experiences",
     image: "images/but-hero.jpeg",
