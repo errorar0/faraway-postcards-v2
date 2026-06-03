@@ -48,12 +48,12 @@ const articles = [
   url: "articles-v3/kaziranga-national-park-the-wild-heart-of-assam.html"
 },
   {
-    title: "Routes Through Georgia for the Feeling of Infinity",
-    image: "images/georgia-infinity-mountain-road-hero.jpeg",
-    country: "Georgia",
-    experience: "Guidebook",
-    url: "articles/routes-through-georgia-for-the-feeling-of-infinity.html"
-  },
+  title: "Routes Through Georgia for the Feeling of Infinity",
+  image: "images/georgia-infinity-mountain-road-hero.jpeg",
+  country: "Georgia",
+  experience: "Guidebook",
+  url: "articles-v3/routes-through-georgia-for-the-feeling-of-infinity.html"
+},
 
  {
   title: "Quiet Thailand: Two Weeks Among Birds, Lakes, Jungles, and Sea Air",
