@@ -158,7 +158,7 @@ const articles = [
     image: "images/vietnam/vietnam-geography-of-flavor-hero.jpeg",
     country: "Vietnam",
     experience: "Food",
-    url: "articles/the-geography-of-flavor-in-vietnam.html"
+    url: "articles-v3/the-geography-of-flavor-in-vietnam.html"
   },
 
   {
