@@ -15,12 +15,12 @@ a {
 }
 
 .site-header {
-  height: 54px;
+  height: 82px;
   background: #ffffff;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 26px;
+  padding: 0 40px;
   border-bottom: 1px solid #eee5d8;
   position: sticky;
   top: 0;
@@ -28,7 +28,7 @@ a {
 }
 
 .logo {
-  font-size: 24px;
+  font-size: 30px;
   font-weight: bold;
   color: #183f3b;
 }
@@ -39,15 +39,16 @@ a {
 
 .site-header nav {
   display: flex;
-  gap: 22px;
+  gap: 38px;
   font-family: Arial, sans-serif;
-  font-size: 11px;
+  font-size: 20px;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.04em;
 }
+
 .site-header nav a {
   position: relative;
-  padding-bottom: 6px;
+  padding-bottom: 8px;
 }
 
 .site-header nav a.active::after {
@@ -56,10 +57,9 @@ a {
   left: 0;
   right: 0;
   bottom: 0;
-  height: 2px;
+  height: 3px;
   background: #d8942f;
 }
-
 .hero {
   width: 100%;
   min-height: 720px;
