@@ -186,13 +186,13 @@ const articles = [
   url: "articles-v3/best-time-to-visit-laos.html"
 },
 
-  {
-    title: "The Volcanic Architecture of Armenia",
-    image: "images/yerevan_armenia.jpeg",
-    country: "Armenia",
-    experience: "Architecture",
-    url: "articles/the-volcanic-architecture-of-armenia.html"
-  },
+ {
+  title: "The Volcanic Architecture of Armenia",
+  image: "images/yerevan_armenia.jpeg",
+  country: "Armenia",
+  experience: "Architecture",
+  url: "articles-v3/the-volcanic-architecture-of-armenia.html"
+},
 {
   title: "Tea Mountains, Canal Cities and Sea of Clouds: Eastern China by Rail",
   image: "images/china-eastern-hero.jpeg",
