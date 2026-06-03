@@ -20,7 +20,7 @@ const articles = [
   image: "images/chile-san-pedro-route.jpg",
   country: "Chile",
   experience: "Guidebook",
-  url: "articles/san-pedro-de-atacama-place-that-changes-your-itinerary.html"
+  url: "articles-v3/san-pedro-de-atacama-place-that-changes-your-itinerary.html"
 },
   
 {
