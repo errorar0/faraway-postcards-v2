@@ -126,7 +126,7 @@ const articles = [
     image: "images/birdwatching-world-vacation-hero.jpeg",
     country: "World",
     experience: "Wildlife",
-    url: "articles/wonderful-birdwatching-vacations-around-the-world.html"
+    url: "articles-v3/wonderful-birdwatching-vacations-around-the-world.html"
   },
 
   {
