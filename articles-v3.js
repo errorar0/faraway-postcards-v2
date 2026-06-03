@@ -36,7 +36,7 @@ const articles = [
   image: "images/indore-india-hero.jpeg",
   country: "India",
   experience: "Guidebook",
-  url: "articles/the-indian-city-that-quietly-changes-everything-you-expect-from-india.html"
+  url: "articles-v3/the-indian-city-that-quietly-changes-everything-you-expect-from-india.html"
 },
   
  {
