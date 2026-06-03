@@ -76,7 +76,7 @@ const articles = [
     image: "images/patan-mood-through-the-year.jpeg",
     country: "Nepal",
     experience: "Best Time to Visit",
-    url: "articles/the-mood-of-patan-across-the-year.html"
+    url: "articles-v3/the-mood-of-patan-across-the-year.html"
   },
 
   {
