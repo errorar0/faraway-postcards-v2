@@ -169,13 +169,13 @@ const articles = [
     url: "articles-v3/the-geography-of-flavor-in-vietnam.html"
   },
 
-  {
-    title: "The Philippines Most People Never Imagine",
-    image: "images/philippines-volcanoes-cover.jpeg",
-    country: "Philippines",
-    experience: "Nature",
-    url: "articles/the-philippines-most-people-never-imagine.html"
-  },
+{
+  title: "The Philippines Most People Never Imagine",
+  image: "images/philippines-volcanoes-cover.jpeg",
+  country: "Philippines",
+  experience: "Nature",
+  url: "articles-v3/the-philippines-most-people-never-imagine.html"
+},
 
   {
     title: "Ten Days Through Vietnam’s Food Culture",
